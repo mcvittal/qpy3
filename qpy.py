@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+###
+###
+### You are free to modify this script to fit your needs.
+### 
+###
+
+>>>>>>> 8ec145762323524c1c55e5ab7924c47fd156a113
 
 #!/usr/bin/python
 # Prepare the environment
