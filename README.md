@@ -7,9 +7,9 @@ If you're used to the simplicity of import arcpy from the ArcGIS suite, you'll s
 This package is developed on Linux Mint 17.2, running QGIS 2.0.1 Dufour. The library assumes that you have python-qgis installed, and that the processing modules are located in /usr/share/qgis/python/plugins. It is written in Python 2.7.
 
 #Example usage
- 	import qpy
+ 	>> import qpy
  
- 	qpy.alghelp("qgis:clip")
+ 	>> qpy.alghelp("qgis:clip")
  
  	ALGORITHM: Clip
  
@@ -18,6 +18,7 @@ This package is developed on Linux Mint 17.2, running QGIS 2.0.1 Dufour. The lib
 		OVERLAY <ParameterVector>
 	
 		OUTPUT <OutputVector>
-	
+		
+	>> qpy.close()
 	
 More functions and built in help modules will be added in the future.
