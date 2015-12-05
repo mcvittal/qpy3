@@ -1,1 +1,3 @@
 commit.sh
+*.pyc
+processing/
