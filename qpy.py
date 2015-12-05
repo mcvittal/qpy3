@@ -5,8 +5,8 @@
 ###
 
 #!/usr/bin/python
-from processing_obj import Qprocess
-from processing_functions import *
+from modules.processing_obj import Qprocess
+from modules.processing_functions import *
 
 qgpy = Qprocess()
 
