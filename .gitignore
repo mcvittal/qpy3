@@ -1,3 +1,5 @@
 commit.sh
 *.pyc
 processing/
+testing_cases.txt
+testing.py

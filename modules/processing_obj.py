@@ -32,8 +32,6 @@ class DummyInterface(object):
 
 
 class Qprocess():
-	 
-	
 	QgsApplication.setPrefixPath("/usr", True)
 	QgsApplication.initQgis()
 	iface = DummyInterface()
