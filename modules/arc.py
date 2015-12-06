@@ -5,7 +5,7 @@ import os
 
 qgpy = Qprocess()
 
-p = qgpy.getp()
+p = qgpy.getp() 
 
 # Clip_analysis: String String String --> None
 # 
