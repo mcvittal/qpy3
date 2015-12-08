@@ -7,6 +7,9 @@ qgpy = Qprocess()
 
 p = qgpy.getp() 
 
+#****
+# Analysis toolbox
+
 # Clip_analysis: String String String --> None
 # 
 # in_shp and clip_shp must both be valid fullpaths to shape files
@@ -41,4 +44,10 @@ def select_analysis(in_shp, out_shp, query):
 def tableselect(in_dbf, out_dbf, query):
 	select_analysis(in_dbf, out_dbf, query)
 
-	
+# TODO figure out split
+#      Probably some combination of Intersect and then iterate through the intersected features (my best guess at implementation anyways)
+
+# End of analysis toolbox
+# ***	
+
+
