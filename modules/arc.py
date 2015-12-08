@@ -47,7 +47,23 @@ def tableselect(in_dbf, out_dbf, query):
 # TODO figure out split
 #      Probably some combination of Intersect and then iterate through the intersected features (my best guess at implementation anyways)
 
+
+def intersect_analysis(in_shp, in_shp2, out_shp):
+	in_shp = layers.create_shp(in_shp)
+	in_shp2 = layers.create_shp(in_shp2)
+	p.runalg("qgis:intersection", in_shp, in_shp2, out_shp)
+
+def erase_analysis(in_shp, erase_shp, out_shp):
+	in_shp = layers.create_shp(in_shp)
+	erase_shp = layers.create_shp(erase_shp)
+	p.runalg("qgis:difference", in_shp, erase_shp, out_shp)
+
+def union_analysis(in_shp, in_shp2, out_shp):
+	in_shp = layers.create_shp(in_shp)
+	in_shp2 = layers.create_shp(in_shp2)
+	p.runalg("qgis:union", in_shp, in_shp2, out_shp)
+
+
 # End of analysis toolbox
 # ***	
-
 
