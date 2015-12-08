@@ -1,11 +1,16 @@
 #!/usr/bin/python
 # Prepare the environment
 import sys
-# Prepare processing framework 
+# Specify path to processing module 
 sys.path.append('/usr/share/qgis/python/plugins')
+
+# Necessary imports
 import qgis
 from qgis.utils import *
+
+#Allows for stderr and stdout to be printed to screen.
 uninstallErrorHook()
+
 from qgis.core import QgsApplication
 import qgis.core as qgc
 from qgis.analysis import *
@@ -15,6 +20,7 @@ import processing as p
 uninstallErrorHook() 
 
 
+# Creates a dummy QGIS interface for the processing objects to interact with
 class DummyInterface(object):
 	def __init__(self):
 		self.destCrs = None
@@ -30,7 +36,9 @@ class DummyInterface(object):
 		# simulate iface.legendInterface().layers()
 		return qgis.core.QgsMapLayerRegistry.instance().mapLayers().values()
 
-
+# The class that gets created in all subsequent qpy modules.
+#     Creates a processing object and allows other .py classes
+#     and methods to obtain it.
 class Qprocess():
 	QgsApplication.setPrefixPath("/usr", True)
 	QgsApplication.initQgis()
