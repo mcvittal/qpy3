@@ -37,7 +37,7 @@ You should get something that looks like this:
 	
 		OUTPUT <OutputVector>
 		
-	>> qpy.select_analysis("input_shp.shp", "output_shp.shp", "FID < 3")
+	>> qpy.select("input_shp.shp", "output_shp.shp", "FID < 3")
 	>> 
 	
 More functions and built in help modules will be added in the future.
