@@ -60,5 +60,10 @@ def union(in_shp, in_shp2, out_shp):
 	in_shp2 = layers.create_shp(in_shp2)
 	p.runalg("qgis:union", in_shp, in_shp2, out_shp)
 
+def merge(in_shp, in_shp2, out_shp):
+	in_shp = layers.create_shp(in_shp)
+	in_shp2 = layers.create_shp(in_shp2)
+	p.runalg("qgis:merge", in_shp, in_shp2, out_shp)
+
 	
 
