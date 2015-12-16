@@ -6,7 +6,7 @@ If you're used to the simplicity of import arcpy from the ArcGIS suite, you'll s
 #Requirements
 This package is developed on Linux Mint 17.2, running QGIS 2.0.1 Wien. It requires QGIS to be installed on the machine. The library assumes that you have python-qgis installed, and that the processing modules are located in /usr/share/qgis/python/plugins. It is written in Python 2.7. 
 
-This package appears to break when upgrading from QGIS 2.0.1 to 2.8.1. For now all testing and development is being done on 2.0.1.
+This package appears to break when upgrading from QGIS 2.0.1 to 2.8.1. It is confirmed to work with 2.0.1 and 2.12.1 in Linux Mint 17.2 and 17.3, and theoretically Ubuntu 14.04 LTS, since LM17 is based off of 14.04.
 
 It now requires GDAL to be installed as well. To install on Ubuntu based systems, run the following.
 

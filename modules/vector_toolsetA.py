@@ -1,5 +1,4 @@
 import sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir)))
 from processing_obj import Qprocess
 import layers
 import qgis.core as qgc
