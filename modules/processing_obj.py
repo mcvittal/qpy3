@@ -49,6 +49,6 @@ class Qprocess():
 	iface = DummyInterface()
 	plugin = processing.classFactory(iface)
         Processing.initialize()
-	def getp(self):
-		return g 
+        def getp(self):
+                return g 
 		

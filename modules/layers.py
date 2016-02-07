@@ -10,8 +10,8 @@ p = qgpy.getp()
 # Sets name to be the filename without extension.
 
 def create_shp(shpfile_path):
-	return qgc.QgsVectorLayer(shpfile_path, shpfile_path[:-4], "http://www.google.ca")
+	return qgc.QgsVectorLayer(shpfile_path, shpfile_path[:-4], "none")
 
 def create_raster(raster_path):
-	return qgc.QgsRasterLayer(raster_path, raster_path[:-4], "http://www.google.ca")
+	return qgc.QgsRasterLayer(raster_path, raster_path[:-4], "none")
 
