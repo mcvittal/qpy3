@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Prepare the environment
+#   Prepare the environment
 import sys, os
 # Setup path to processing modules
 qgisprefix = '/usr'
