@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #   Prepare the environment
 import sys, os
 # Setup path to processing modules

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys, os
 from processing_obj import Qprocess
 import layers

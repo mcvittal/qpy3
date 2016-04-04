@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from processing_obj import Qprocess
 import qgis.core as qgc
 

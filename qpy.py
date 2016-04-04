@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 from modules.processing_obj import Qprocess
 from modules.processing_functions import *
 from modules.layers import *
