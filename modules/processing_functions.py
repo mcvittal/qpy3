@@ -43,6 +43,9 @@ def values(*arg):
 def getfeatures(layer):
 	return p.getfeatures(layer)
 
+
+# uniquelabels: Any -> Any
+#  Returns all unique labels for layers in qpy instance 
 def uniquelabels(*arg):
 	return p.uniquelabels(*arg)
 
@@ -53,3 +56,5 @@ def close():
 	# Exit applications
 	QgsApplication.exitQgis()
 	QApplication.exit()
+
+

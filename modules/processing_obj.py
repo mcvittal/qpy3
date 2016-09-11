@@ -4,13 +4,14 @@ import sys, os
 # Setup path to processing modules
 qgisprefix = '/usr'
 
+# Set up the environment path settings, append QGIS library locations 
 os.environ['PATH'] = qgisprefix + '/bin'
 os.environ['LD_LIBRARY_PATH'] = qgisprefix+'/lib'
+#Allows for stderr and stdout to be printed to screen - QGIS swallows it otherwise 
 sys.path.insert(0, qgisprefix+'/share/qgis/python')
 sys.path.insert(1, qgisprefix+'/share/qgis/python/plugins')
-#Allows for stderr and stdout to be printed to screen.
 
-#uninstallErrorHook()
+#uninstallErrorHook() # Needed it for earlier versions of QGIS 
 os.environ['QGIS_DEBUG'] = '-1'
 
 #Package imports
@@ -48,7 +49,7 @@ class Qprocess():
 	QgsApplication.setPrefixPath("/usr", True)
 	iface = DummyInterface()
 	plugin = processing.classFactory(iface)
-        Processing.initialize()
-        def getp(self):
-                return g 
+	Processing.initialize()
+	def getp(self):
+		return g 
 		

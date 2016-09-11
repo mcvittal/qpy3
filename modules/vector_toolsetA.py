@@ -9,6 +9,8 @@ qgpy = Qprocess()
 
 p = qgpy.getp() 
 
+
+
 # Clip: String String String --> None
 # 
 # in_shp and clip_shp must both be valid fullpaths to shape files
@@ -40,11 +42,16 @@ def select(in_shp, out_shp, query):
 
 
 
+# tableselect: String String String --> None
+#
+# in_dbf must be a valid path to a DBF file, and out_dbf must point to a non-existing dbf file in an actual folder.
+
 def tableselect(in_dbf, out_dbf, query):
 	select_analysis(in_dbf, out_dbf, query)
 
-
-
+# intersect: String String String --> None
+#
+# in_shp and in_shp2 must be a valid path to a valid ESRI shapefile datatype, and out_shp must be a non-existing ESRI shp file in an actual existing folder
 def intersect(in_shp, in_shp2, out_shp):
 	in_shp = layers.create_shp(in_shp)
 	in_shp2 = layers.create_shp(in_shp2)
@@ -65,5 +72,20 @@ def merge(in_shp, in_shp2, out_shp):
 	in_shp2 = layers.create_shp(in_shp2)
 	p.runalg("qgis:merge", in_shp, in_shp2, out_shp)
 
+def add_field(in_shp, field_name, field_type, field_length, field_precision, output_layer):
+	in_shp = layers.create_shp(in_shp)
+	if field_type.lower() == "integer":
+		ft = "integer"
+		field_type = 0
+	elif field_type.lower() == "float":
+		ft = "float"
+		field_type = 1
+	else:
+		ft = "string"
+		field_type = 2
+	print("Generating field {} of type {}.".format(field_name, ft)	
+	p.runalg("qgis:addfieldtoattributestable", in_shp, field_name, field_type, field_length, field_precision, output_later)
+
+def 
 	
 
