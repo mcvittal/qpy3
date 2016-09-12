@@ -1,24 +1,15 @@
 #!/usr/bin/env python
 #   Prepare the environment
-import sys, os, platform
+import sys, os
+# Setup path to processing modules
+qgisprefix = '/usr'
 
-# Determine what OS is being used
-this_os = platform.platform().lower()
-if "windows" in this_os:
-	print "Initializing qpy for a Windows system"
-	os.system("'C:\Program Files\QGIS 2.14\apps\Python27\Lib\site-packages\pythonwin\pywin\framework\startup.py'")
-	os.environ['PATH'] = "'C:\Program Files\QGIS 2.14\apps\qgis-ltr\bin'"
-
-else:
-	print "Initializing qpy for a Linux system"
-	# Setup path to processing modules
-	qgisprefix = '/usr'
-	# Set up the environment path settings, append QGIS library locations 
-	os.environ['PATH'] = qgisprefix + '/bin'
-	os.environ['LD_LIBRARY_PATH'] = qgisprefix+'/lib'
-	#Allows for stderr and stdout to be printed to screen - QGIS swallows it otherwise 
-	sys.path.insert(0, qgisprefix+'/share/qgis/python')
-	sys.path.insert(1, qgisprefix+'/share/qgis/python/plugins')
+# Set up the environment path settings, append QGIS library locations 
+os.environ['PATH'] = qgisprefix + '/bin'
+os.environ['LD_LIBRARY_PATH'] = qgisprefix+'/lib'
+#Allows for stderr and stdout to be printed to screen - QGIS swallows it otherwise 
+sys.path.insert(0, qgisprefix+'/share/qgis/python')
+sys.path.insert(1, qgisprefix+'/share/qgis/python/plugins')
 
 #uninstallErrorHook() # Needed it for earlier versions of QGIS 
 os.environ['QGIS_DEBUG'] = '-1'
