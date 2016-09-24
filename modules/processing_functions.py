@@ -53,8 +53,9 @@ def uniquelabels(*arg):
 # Closes the connection to QgsApplication. Haven't found this to be 
 #  necessary during testing, but its good practice.
 def close():
+	q = qgpy.getqgs()
 	# Exit applications
-	QgsApplication.exitQgis()
-	QApplication.exit()
+	q.exitQgis()
+	q.exit()
 
 
