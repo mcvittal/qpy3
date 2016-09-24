@@ -6,8 +6,8 @@ import sys, os, platform
 this_os = platform.platform().lower()
 if "windows" in this_os:
 	print "Initializing qpy for a Windows system"
-	os.system("'C:\Program Files\QGIS 2.14\apps\Python27\Lib\site-packages\pythonwin\pywin\framework\startup.py'")
-	os.environ['PATH'] = "'C:\Program Files\QGIS 2.14\apps\qgis-ltr\bin'"
+	qgisprefix = 'C:/OSGeo4W64/bin'
+	os.system("windows_init.bat")
 
 else:
 	print "Initializing qpy for a Linux system"
@@ -61,4 +61,6 @@ class Qprocess():
 	Processing.initialize()
 	def getp(self):
 		return g 
+	def getqgs(self):
+		return QgsApplication
 		
