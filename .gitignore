@@ -1,4 +1,5 @@
 commit.sh
+commit
 *.pyc
 *.py~
 processing/
