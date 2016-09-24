@@ -83,9 +83,6 @@ def add_field(in_shp, field_name, field_type, field_length, field_precision, out
 	else:
 		ft = "string"
 		field_type = 2
-	print("Generating field {} of type {}.".format(field_name, ft)	
+	print("Generating field {} of type {}.".format(field_name, ft))	
 	p.runalg("qgis:addfieldtoattributestable", in_shp, field_name, field_type, field_length, field_precision, output_later)
-
-def 
-	
 
