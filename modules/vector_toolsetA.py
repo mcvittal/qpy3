@@ -15,7 +15,7 @@ p = qgpy.getp()
 # 
 # in_shp and clip_shp must both be valid fullpaths to shape files
 # out_shp must be a valid path to a shp file (doesnt have to exist)
-def Clip(in_shp, clip_shp, out_shp):
+def clip(in_shp, clip_shp, out_shp):
 	in_shp = layers.create_shp(in_shp)
 	clip_shp = layers.create_shp(clip_shp)
 	p.runalg("qgis:clip", in_shp, clip_shp, out_shp)
