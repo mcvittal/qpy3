@@ -70,7 +70,7 @@ def union(in_shp, in_shp2, out_shp):
 def merge(in_shp, in_shp2, out_shp):
 	in_shp = layers.create_shp(in_shp)
 	in_shp2 = layers.create_shp(in_shp2)
-	p.runalg("qgis:merge", in_shp, in_shp2, out_shp)
+	p.runalg("qgis:mergevectorlayers", in_shp, in_shp2, out_shp)
 
 def add_field(in_shp, field_name, field_type, field_length, field_precision, output_layer):
 	in_shp = layers.create_shp(in_shp)
