@@ -66,4 +66,28 @@ class Qprocess():
 		return g 
 	def getqgs(self):
 		return QgsApplication
-		
+	def exit(self):
+		try:
+			del app 
+		except:
+			print "Failed deleting app"
+		try:
+			del plugin
+		except:
+			print "Failed deleting plugin"
+		try:
+			del iface
+		except:
+			print "Failed deleting iface"
+		try:
+			del QgsApplication
+		except:
+			print "Failed deleting QgsApplication"
+		try:
+			del g 
+		except:
+			print "Failed deleting processing"
+		try:
+			del self
+		except:
+			print "Failed deleting Qprocess"
