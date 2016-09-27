@@ -16,7 +16,8 @@ def create_shp(shpfile_path):
 	lyr = qgc.QgsVectorLayer(shpfile_path, shpfile_path[:-4], "none")
 	if not lyr.isValid():
 		print "Invalid layer. Bailing out, good luck."
-		sys.exit(0)
+		return lyr
+		#sys.exit(0)
 	else:
 		return lyr
 
