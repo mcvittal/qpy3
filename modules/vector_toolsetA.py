@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys, os, shutil
+import sys, os, shutil, glob
 from processing_obj import Qprocess
 import layers
 import qgis.core as qgc
@@ -82,18 +82,22 @@ def merge_multiple(shp_lst, out_shp):
 	tmpdir = os.path.join(os.path.expanduser("~"), "qgis_tmp") 
 	os.mkdir(tmpdir)
 	
+	# Merge the first two shapefiles in the list
 	merge(shp_lst[0], shp_lst[1], os.path.join(tmpdir, "output1.shp"))
 	
+	# Merge shapefile #3 -> N - 1 together
 	for x in range(2, len(shp_lst) - 1):
 		merge(shp_lst[x], os.path.join(tmpdir, "output{}.shp".format(x - 1)),
 						  os.path.join(tmpdir, "output{}.shp".format(x))
 	
+	# Merge the last shapefile in the list
 	merge(shp_lst[len(shp_lst) - 1], "output{}.shp".format(len(shp_lst) - 1), out_shp)
-	
-	
 	# Delete the temporary directory
 	shutil.rmtree(tmpdir)
 	
+def merge_folder(indir, out_shp):
+	lst = glob.glob(os.path.join(indir, "*.shp"))
+	merge_multiple(lst, out_shp)
 	
 	
 
