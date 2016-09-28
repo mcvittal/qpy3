@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys, os
+import sys, os, shutil
 from processing_obj import Qprocess
 import layers
 import qgis.core as qgc
@@ -71,6 +71,31 @@ def merge(in_shp, in_shp2, out_shp):
 	in_shp = layers.create_shp(in_shp)
 	in_shp2 = layers.create_shp(in_shp2)
 	p.runalg("qgis:mergevectorlayers", in_shp, in_shp2, out_shp)
+
+# merge_multiple: List(String) String -> None
+def merge_multiple(shp_lst, out_shp):
+	if len(shp_lst) < 3:
+		print("Not enough shapefiles in list. Use merge(). Exiting method...")
+		return 
+	
+	# Create a temporary directory that the module will have write access to
+	tmpdir = os.path.join(os.path.expanduser("~"), "qgis_tmp") 
+	os.mkdir(tmpdir)
+	
+	merge(shp_lst[0], shp_lst[1], os.path.join(tmpdir, "output1.shp"))
+	
+	for x in range(2, len(shp_lst) - 1):
+		merge(shp_lst[x], os.path.join(tmpdir, "output{}.shp".format(x - 1)),
+						  os.path.join(tmpdir, "output{}.shp".format(x))
+	
+	merge(shp_lst[len(shp_lst) - 1], "output{}.shp".format(len(shp_lst) - 1), out_shp)
+	
+	
+	# Delete the temporary directory
+	shutil.rmtree(tmpdir)
+	
+	
+	
 
 def add_field(in_shp, field_name, field_type, field_length, field_precision, output_layer):
 	in_shp = layers.create_shp(in_shp)
