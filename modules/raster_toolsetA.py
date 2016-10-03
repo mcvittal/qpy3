@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys, os
+import sys, os, subprocess
 from processing_obj import Qprocess
 import layers
 import qgis.core as qgc
@@ -12,7 +12,7 @@ p = qgpy.getp()
 
 
 def clip_raster(in_raster, polygon_mask, out_raster):
-	in_raster = layers.create_raster(in_raster)
-	polygon_mask = layers.create_shp(polygon_mask)
-	p.runalg("saga:clipgridwithpolygon", in_raster,polygon_mask,out_raster)
-
+	subprocess.call(['gdalwarp', '-q', '-cutline', polygon_mask, '-dstalpha',  '-of', 'GTiff', 
+					 in_raster, out_raster])
+	
+	
