@@ -88,7 +88,7 @@ def merge_multiple(shp_lst, out_shp):
 	# Merge shapefile #3 -> N - 1 together
 	for x in range(2, len(shp_lst) - 1):
 		merge(shp_lst[x], os.path.join(tmpdir, "output{}.shp".format(x - 1)),
-						  os.path.join(tmpdir, "output{}.shp".format(x))
+						  os.path.join(tmpdir, "output{}.shp".format(x)))
 	
 	# Merge the last shapefile in the list
 	merge(shp_lst[len(shp_lst) - 1], "output{}.shp".format(len(shp_lst) - 1), out_shp)
