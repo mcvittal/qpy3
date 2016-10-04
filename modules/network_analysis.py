@@ -13,4 +13,4 @@ def serviceAreas(line_network, starting_point):
 	director.addProperter(properter)
 	delta = qgis.utils.iface.mapCanvas().getCoordinateTransform().mapUnitsPerPixel() * 1
 	
-	
+	  
