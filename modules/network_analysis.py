@@ -13,4 +13,9 @@ def serviceAreas(line_network, starting_point):
 	director.addProperter(properter)
 	delta = qgis.utils.iface.mapCanvas().getCoordinateTransform().mapUnitsPerPixel() * 1
 	
-	  
+	# Get the CRS of the line network 
+	crs = v1.crs().authid()
+	builder = QgsGraphBuilder(crs)
+	pStart = layers.create_shp(starting_point)
+	
+	
