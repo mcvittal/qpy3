@@ -41,4 +41,4 @@ def create_raster(raster_path):
 def create_graph(line_network_path):
 	line_lyr = create_shp(line_network_path)
 	director = QgsLineVectorLayerDirector(line_lyr, -1, '', '', '', 3)
-	return director 
+	return director

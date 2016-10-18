@@ -5,10 +5,11 @@ import layers
 import sys, os
 
 
+
+
 # Code modified from http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/network_analysis.html#areas-of-availability
 def serviceAreas(line_network, starting_point):
-	v1 = layers.create_shp(line_network)
-	director = QgsLineVectorLayerDirector(vl, -1, '', '', '', 3)
+	director = layers.create_graph(line_network)
 	properter = QgsDistanceArcProperter()
 	director.addProperter(properter)
 	delta = qgis.utils.iface.mapCanvas().getCoordinateTransform().mapUnitsPerPixel() * 1
@@ -17,5 +18,4 @@ def serviceAreas(line_network, starting_point):
 	crs = v1.crs().authid()
 	builder = QgsGraphBuilder(crs)
 	pStart = layers.create_shp(starting_point)
-	
 	
