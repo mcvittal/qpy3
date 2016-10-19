@@ -5,12 +5,13 @@ import sys, os, platform
 # Determine what OS is being used
 this_os = platform.platform().lower()
 if "windows" in this_os:
-	print "Initializing qpy for a Windows system"
-	qgisprefix = 'C:/OSGeo4W64/bin'
-	os.system("windows_init.bat")
-	os.system("'C:\Program Files\QGIS 2.14\apps\Python27\Lib\site-packages\pythonwin\pywin\framework\startup.py'")
-	os.environ['PATH'] = "'C:\Program Files\QGIS 2.14\apps\qgis-ltr\bin'"
-
+	print "Initializing for a Windows system"
+	#qgisprefix = 'C:/Program Files/QGIS 2.14'
+	#os.system("windows_init.bat")
+	#os.system("'C:\Program Files\QGIS 2.14\apps\Python27\Lib\site-packages\pythonwin\pywin\framework\startup.py'")
+	#os.environ['PATH'] = "'C:\Program Files\QGIS 2.14\apps\qgis-ltr\bin'"
+	sys.path.append(r"C:\Program Files\QGIS 2.14\apps\qgis-ltr\python\plugins")
+	
 
 else:
 	print "Initializing qpy for a Linux system"
@@ -22,15 +23,15 @@ else:
 	#Allows for stderr and stdout to be printed to screen - QGIS swallows it otherwise 
 	sys.path.insert(0, qgisprefix+'/share/qgis/python')
 	sys.path.insert(1, qgisprefix+'/share/qgis/python/plugins')
+	QgsApplication.setPrefixPath(qgisprefix, True)
 
 #uninstallErrorHook() # Needed it for earlier versions of QGIS 
 os.environ['QGIS_DEBUG'] = '-1'
 
 #Package imports
+import qgis
 from qgis.core import *
 from qgis.gui import *
-
-QgsApplication.setPrefixPath(qgisprefix, True)
 app = QgsApplication([], True)
 from PyQt4 import QtCore, QtGui
 import processing 
