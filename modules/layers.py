@@ -15,15 +15,8 @@ p = qgpy.getp()
 # Sets name to be the filename without extension.
 
 def create_shp(shpfile_path):
-	lyr = qgc.QgsVectorLayer(shpfile_path, shpfile_path[:-4], "none")
-	if not lyr.isValid():
-		print "Invalid layer. Bailing out, good luck."
-		return lyr
-		#sys.exit(0)
-	else:
-		return lyr
-
-
+	return qgc.QgsVectorLayer(shpfile_path, shpfile_path[:-4], "none")
+	
 # create_raster: String -> QgsRasterLayer
 # Easily create a QGIS raster layer.
 def create_raster(raster_path):
