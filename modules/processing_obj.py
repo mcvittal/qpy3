@@ -7,11 +7,18 @@ this_os = platform.platform().lower()
 if "windows" in this_os:
 	print "Initializing for a Windows system"
         qgis_folder = None
+        is_osgeo = True
         if os.path.isdir(r"C:\OSGeo4W\apps\qgis\python\plugins"):
             sys.path.append(r"C:\OSGeo4W\apps\qgis\python\plugins")
         elif os.path.isdir(r"C:\OSGeo4W\apps\qgis-ltr\python\plugins"):
             sys.path.append(r"C:\OSGeo4W\apps\qgis-ltr\python\plugins")
+        elif os.path.isdir(r"C:\OSGeo4W64\apps\qgis\python\plugins"):
+            sys.path.append(r"C:\OSGeo4W64\apps\qgis\python\plugins")
+        elif os.path.isdir(r"C:\OSGeo4W64\apps\qgis-ltr\python\plugins"):
+            sys.path.append(r"C:\OSGeo4W64\apps\qgis-ltr\python\plugins")
         elif os.path.isdir(r"C:\Program Files (x86)"):
+            is_osgeo = False
+            print "f"
             qgis_folder = ""
             for folder in os.listdir(r"C:\Program Files (x86)"):
                 if "QGIS" in folder.upper():
@@ -25,10 +32,10 @@ if "windows" in this_os:
                         break
             if qgis_folder == "":
                 print("Could not find QGIS installation.")
-                print("Please email alexander.mcvittie@gmail.com for
-                       assistance")
+                print("Please email alexander.mcvittie@gmail.com for assistance")
                 sys.exit(0)
         else:
+            is_osgeo = False
             qgis_folder = ""
             for folder in os.listdir(r"C:\Program Files"):
                 if "QGIS" in folder.upper():
@@ -41,13 +48,13 @@ if "windows" in this_os:
         # exception to the code.
         if qgis_folder == "":
             print("Could not find QGIS installation.")
-            print("Please email alexander.mcvittie@gmail.com for
-                   assistance")
+            print("Please email alexander.mcvittie@gmail.com for assistance")
             sys.exit(0)
         qgis_base = qgis_folder
-        if "qgis-ltr" in os.listdir(os.path.join(qgis_base, "apps")):
+
+        if not is_osgeo and "qgis-ltr" in os.listdir(os.path.join(qgis_base, "apps")):
             sys.path.append(qgis_base, "apps", "qgis-ltr", "python", "plugins")
-        else:
+        elif not is_osgeo:
             sys.path.append(qgis_base, "apps", "qgis", "python", "plugins")
 else:
 	print "Initializing qpy for a Linux system"
@@ -59,7 +66,7 @@ else:
 	#Allows for stderr and stdout to be printed to screen - QGIS swallows it otherwise 
 	sys.path.insert(0, qgisprefix+'/share/qgis/python')
 	sys.path.insert(1, qgisprefix+'/share/qgis/python/plugins')
-	QgsApplication.setPrefixPath(qgisprefix, True)
+	#QgsApplication.setPrefixPath(qgisprefix, True)
 
 #uninstallErrorHook() # Needed it for earlier versions of QGIS 
 os.environ['QGIS_DEBUG'] = '-1'
