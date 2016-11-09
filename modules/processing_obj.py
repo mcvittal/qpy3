@@ -19,6 +19,8 @@ class DummyInterface(object):
 		# simulate iface.legendInterface().layers()
 		return qgis.core.QgsMapLayerRegistry.instance().mapLayers().values()
 	
+# get_qgisprefix: None --> String
+# Determines the install path of QGIS if it is in Windows, or if it is on Linux, returns "/usr"
 
 def get_qgisprefix():
 	this_os = platform.platform().lower()
@@ -71,7 +73,12 @@ def get_qgisprefix():
 			elif not is_osgeo:
 				return os.path.join(qgis_base, "apps", "qgis")
 	else:
+		print "Initializing for a UNIX system"
 		return "/usr"
+
+# init_path: None --> String
+# Initializes path variables for Linux and Windows, and returns the value 
+# to be passed into setting the prefix path for the QgsApplication object.
 def init_path():
 	this_os = platform.platform().lower()
 	prefix = get_qgisprefix()
@@ -105,7 +112,8 @@ os.environ['QGIS_DEBUG'] = '-1'
 from qgis.core import *
 from qgis.gui import *
 
-
+# init_qprocess: None --> class processing.tools.general
+# Initializes the Processing library and objects for the Qprocess class.
 def init_qprocess():
 	QgsApplication.setPrefixPath(qgsapplication_prefix, True)
 	app = QgsApplication([], True)
@@ -124,5 +132,7 @@ def init_qprocess():
 class Qprocess():
 	def __init__(self):
 		pass
+	# getp: None --> processing.tools.general
+	# Gets a processing object.
 	def getp(self):
 		return init_qprocess()
