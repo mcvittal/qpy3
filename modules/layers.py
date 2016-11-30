@@ -6,10 +6,6 @@ from qgis.core import QgsRasterLayer
 from qgis.networkanalysis import *
 import qgis.core as qgc
 
-qgpy = Qprocess()
-
-p = qgpy.getp()
-
 # create_shp: String -> QgsVectorLayer
 # Easily create a QGIS vector shapefile layer.
 # Sets name to be the filename without extension.

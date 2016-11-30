@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 from processing_obj import Qprocess
 class CoreFunctions():
-	def __init__(self, p, qgpy):
-		self.p = p
-		self.gpy = qgpy
+	def __init__(self, _p=None, _qgpy=None):
+		self.p = _p
+		self.gpy = _qgpy
 	#runalg: Any -> None
 	# Calls the runalg function from QGIS processing
 	def runalg(self, *arg):
@@ -53,5 +53,3 @@ class CoreFunctions():
 	def close(self):
 		self.qgpy.exit()
 		del self.qgpy
-
-
