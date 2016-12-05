@@ -97,4 +97,9 @@ class VectorA():
 		print("Generating field {} of type {}.".format(field_name, ft))	
 		self.p.runalg("qgis:addfieldtoattributestable", in_shp, field_name, field_type, field_length, field_precision, output_later)
 
-	def 
+	def count_points_in_polygon(in_polygon, in_points, count_field, out_polygon):
+		in_polygon = layers.create_shp(in_polygon)
+		in_points = layers.create_shp(in_points)
+		self.p.runalg("qgis:countpointsinpolygon", in_polygon, in_points, count_field, out_polygon)
+	def count_points_in_polygon_unique(in_polygon, in_points, 
+	
