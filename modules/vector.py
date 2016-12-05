@@ -101,5 +101,14 @@ class VectorA():
 		in_polygon = layers.create_shp(in_polygon)
 		in_points = layers.create_shp(in_points)
 		self.p.runalg("qgis:countpointsinpolygon", in_polygon, in_points, count_field, out_polygon)
-	def count_points_in_polygon_unique(in_polygon, in_points, 
+	def count_unique_points_in_polygon(in_polygon, in_points, unique_field, count_field, out_polygon):
+		in_polygon = layers.create_shp(in_polygon)
+		in_points = layers.create_shp(in_points)
+		self.p.runalg("qgis:countuniquepointsinpolygon", in_polygon, in_points, unique_field, count_field, out_polygon)
+	
+	def distance_matrix(in_points, in_field, target_points, target_field, matrix_type, nearest_points, output_table):
+		in_points = layers.create_shp(in_points)
+		target_points = layers.create_shp(target_points)
+		self.p.runalg("qgis:distancematrix", in_points, in_field, target_points, target_field, matrix_type, nearest_points, output_table)
+		
 	
