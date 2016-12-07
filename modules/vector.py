@@ -119,4 +119,4 @@ class VectorA():
 		in_polygon = layers.create_shp(in_polygon)
 		in_raster = layers.create_raster(in_raster)
 		self.p.runalg("qgis:generatepointspixelcentroidsinsidepolygons", in_polygon, in_raster, out_points)
-		
+	
