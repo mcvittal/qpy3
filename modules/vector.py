@@ -111,4 +111,12 @@ class VectorA():
 		target_points = layers.create_shp(target_points)
 		self.p.runalg("qgis:distancematrix", in_points, in_field, target_points, target_field, matrix_type, nearest_points, output_table)
 		
-	
+	def generate_points_along_line_pixel(in_line, in_raster, out_points):
+		in_line = layers.create_shp(in_line)
+		in_raster = layers.create_raster(in_raster)
+		self.p.runalg("qgis:generatepointspixelcentroidsalongline", in_line, in_raster, out_points)
+	def generate_points_inside_polygon_pixel(in_polygon, in_raster, out_points):
+		in_polygon = layers.create_shp(in_polygon)
+		in_raster = layers.create_raster(in_raster)
+		self.p.runalg("qgis:generatepointspixelcentroidsinsidepolygons", in_polygon, in_raster, out_points)
+		
