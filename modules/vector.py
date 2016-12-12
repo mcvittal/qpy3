@@ -5,7 +5,10 @@ import layers
 import qgis.core as qgc
 import os
 
-
+# VectorA contains basic functions contained within the base QGIS installation.
+#   All calls to the processing object use the qgis: spatial algorithms.
+#   Other vector classes in the future will contain calls to addons such as
+#   the MMQGIS plugin, GRASS7 libraries, SAGA functions, etc. 
 class VectorA():
 	def __init__(self, _p=None):
 		self.p = _p
@@ -19,34 +22,7 @@ class VectorA():
 		clip_shp = layers.create_shp(clip_shp)
 		self.p.runalg("qgis:clip", in_shp, clip_shp, out_shp)
 
-	#select: String String String --> None
-	#
-	# in_shp must be a valid fullpath to a shape file
-	# out_shp must be a valid path to a shp file. If it exists, it is overwritten.
-
-	def select(in_shp, out_shp, query):
-		# Sample query is '"FIELDNAME" = \'value\' '
-		# Get in_shp filename
-		in_filename = in_shp.split("/")[len(in_shp.split("/")) - 1][:-4]
-		out_filename = out_shp.split("/")[len(in_shp.split("/")) - 1][:-4]
-		out_path = out_shp[:-(len(out_filename) + 4)]
-		# ogr2ogr doesn't like overwriting output, so this removes 
-		#    all the related out_shp shapefile files.
-		if os.path.exists(out_shp):
-			for afile in os.listdir(out_path):
-				if afile.startswith(out_filename):
-					os.remove(out_path + afile)
-
-		os.system('ogr2ogr -sql "SELECT * FROM ' + in_filename + " WHERE " + query + '" ' + out_shp + " " + in_shp)
-
-
-
-	# tableselect: String String String --> None
-	#
-	# in_dbf must be a valid path to a DBF file, and out_dbf must point to a non-existing dbf file in an actual folder.
-
-	def tableselect(in_dbf, out_dbf, query):
-		select_analysis(in_dbf, out_dbf, query)
+	
 
 	# intersect: String String String --> None
 	#
@@ -124,5 +100,39 @@ class VectorA():
 		in_spoke_points = layers.create_shp(in_spoke_points)
 		self.p.runalg("qgis:hublines", in_hub_points, hub_id_field, in_spoke_points, spoke_id_field, out_hub_lines)
 	def mean_coordinates(in_points, in_weightfield=None, in_uniquefield=None, out_point):
-		
+		pass 
+
+# VectorB contains functions that require the use of OGR functions (Select)
+
+class VectorB():
+	def __init__(self, _p=None):
+		self.p = _p
+	#select: String String String --> None
+	#
+	# in_shp must be a valid fullpath to a shape file
+	# out_shp must be a valid path to a shp file. If it exists, it is overwritten.
+
+	def select(in_shp, out_shp, query):
+		# Sample query is '"FIELDNAME" = \'value\' '
+		# Get in_shp filename
+		in_filename = in_shp.split("/")[len(in_shp.split("/")) - 1][:-4]
+		out_filename = out_shp.split("/")[len(in_shp.split("/")) - 1][:-4]
+		out_path = out_shp[:-(len(out_filename) + 4)]
+		# ogr2ogr doesn't like overwriting output, so this removes 
+		#    all the related out_shp shapefile files.
+		if os.path.exists(out_shp):
+			for afile in os.listdir(out_path):
+				if afile.startswith(out_filename):
+					os.remove(out_path + afile)
+
+		os.system('ogr2ogr -sql "SELECT * FROM ' + in_filename + " WHERE " + query + '" ' + out_shp + " " + in_shp)
+
+
+
+	# tableselect: String String String --> None
+	#
+	# in_dbf must be a valid path to a DBF file, and out_dbf must point to a non-existing dbf file in an actual folder.
+
+	def tableselect(in_dbf, out_dbf, query):
+		select_analysis(in_dbf, out_dbf, query)
 	
