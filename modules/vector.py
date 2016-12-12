@@ -119,4 +119,10 @@ class VectorA():
 		in_polygon = layers.create_shp(in_polygon)
 		in_raster = layers.create_raster(in_raster)
 		self.p.runalg("qgis:generatepointspixelcentroidsinsidepolygons", in_polygon, in_raster, out_points)
+	def hublines(in_hub_points, hub_id_field, in_spoke_points, spoke_id_field, out_hub_lines):
+		in_hub_points = layers.create_shp(in_hub_points)
+		in_spoke_points = layers.create_shp(in_spoke_points)
+		self.p.runalg("qgis:hublines", in_hub_points, hub_id_field, in_spoke_points, spoke_id_field, out_hub_lines)
+	def mean_coordinates(in_points, in_weightfield=None, in_uniquefield=None, out_point):
+		
 	
