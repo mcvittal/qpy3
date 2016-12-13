@@ -15,6 +15,8 @@ class VectorA():
 
 	# Clip: String String String --> None
 	# 
+	# Outputs features from in_shp that intersect clip_shp. 
+	#
 	# in_shp and clip_shp must both be valid fullpaths to shape files
 	# out_shp must be a valid path to a shp file (doesnt have to exist)
 	def clip(in_shp, clip_shp, out_shp):
@@ -26,38 +28,75 @@ class VectorA():
 
 	# intersect: String String String --> None
 	#
+	# Generates the intersection between two polygons.
+	#
 	# in_shp and in_shp2 must be a valid path to a valid ESRI shapefile datatype, and out_shp must be a non-existing ESRI shp file in an actual existing folder
 	def intersect(in_shp, in_shp2, out_shp):
 		in_shp = layers.create_shp(in_shp)
 		in_shp2 = layers.create_shp(in_shp2)
 		self.p.runalg("qgis:intersection", in_shp, in_shp2, out_shp)
-
+	# erase: String String String --> None
+	# 
+	# Erases features from the in_shp polygon that overlap the erase_shp polygon.
+	#
+	# in_shp and erase_shp must be valid paths to ESRI shapefile datatypes, and out_shp must be a non-existing ESRI shp file in an existing folder.
+	
 	def erase(in_shp, erase_shp, out_shp):
 		in_shp = layers.create_shp(in_shp)
 		erase_shp = layers.create_shp(erase_shp)
 		self.p.runalg("qgis:difference", in_shp, erase_shp, out_shp)
-
+	
+	# union: in_shp, in_shp2, out_shp --> None
+	#
+	# Calculates the geometric union between two shapefiles.
+	# 
+	# in_shp and in_shp2 must be valid paths to ESRI shapefile datatypes, and out_shp must be a non-existing ESRI shp file in an existing folder.
+	
 	def union(in_shp, in_shp2, out_shp):
 		in_shp = layers.create_shp(in_shp)
 		in_shp2 = layers.create_shp(in_shp2)
 		self.p.runalg("qgis:union", in_shp, in_shp2, out_shp)
-
+	
+	# merge: in_shp, in_shp2, out_shp --> None
+	# 
+	# Merges two shapefiles into one shapefile. Must be all the same vector type (all polygon, all line, or all point. Cannot take in one point and one line)
+	#
+	# in_shp and in_shp2 must be valid paths to ESRI shapefile datatypes, and out_shp must be a non-existing ESRI shp file in an existing folder.
+	
 	def merge(in_shp, in_shp2, out_shp):
 		self.p.runalg("qgis:mergevectorlayers", in_shp + ";" + in_shp2, out_shp)
-
+	
+	# merge_multiple: (list String) String --> None
+	#
+	# Takes an input list of shapefiles and merges them together. 
+	#
+	# All strings in the shp_lst argument must be valid paths to existing shapefiles, and they must all be the same vector type (all polygon, all line, or all point. Cannot take in one point and one line). Out_shp must be a non-existing ESRI shp file in an existing folder.
+	
 	def merge_multiple(shp_lst, out_shp):
 		shps = ""
 		for shp in shp_lst:
 			shps += shp + ";"
 		shps = shps[:-1]
 		self.p.runalg("qgis:mergevectorlayers", shps, out_shp)
-		
-		
-	def merge_folder(indir, out_shp):
-		lst = glob.glob(os.path.join(indir, "*.shp"))
+	
+	# merge_folder: String String Boolean --> None
+	#
+	# Takes an input directory containing shapefiles and merges all the shapefiles into one shapefile.
+	#
+	# The directory must be a valid directory containing only one vector type (all polygon, all line, or all point. Cannot take in one point and one line). Out_shp must be a non-existing ESRI shp file in an existing folder.
+	
+	def merge_folder(indir, out_shp, recursive=False):
+		if not recursive:
+			lst = glob.glob(os.path.join(indir, "*.shp"))
+		else:
+			pass
 		merge_multiple(lst, out_shp)
 		
-		
+	# add_field: String String (union "integer" "float" "string") Integer Float String --> None
+	#
+	# Takes an input shapefile and adds a field - either Integer, Float or String type.
+	#
+	# Must be a valid shapefile. Out_shp must be a non-existing ESRI shp file in an existing folder.
 
 	def add_field(in_shp, field_name, field_type, field_length, field_precision, output_layer):
 		in_shp = layers.create_shp(in_shp)
@@ -73,6 +112,10 @@ class VectorA():
 		print("Generating field {} of type {}.".format(field_name, ft))	
 		self.p.runalg("qgis:addfieldtoattributestable", in_shp, field_name, field_type, field_length, field_precision, output_later)
 
+	# count_points_in_polygon: String String String String --> None
+	# 
+	# 
+	# 
 	def count_points_in_polygon(in_polygon, in_points, count_field, out_polygon):
 		in_polygon = layers.create_shp(in_polygon)
 		in_points = layers.create_shp(in_points)
