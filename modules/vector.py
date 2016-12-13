@@ -99,8 +99,17 @@ class VectorA():
 		in_hub_points = layers.create_shp(in_hub_points)
 		in_spoke_points = layers.create_shp(in_spoke_points)
 		self.p.runalg("qgis:hublines", in_hub_points, hub_id_field, in_spoke_points, spoke_id_field, out_hub_lines)
-	def mean_coordinates(in_points, in_weightfield=None, in_uniquefield=None, out_point):
-		pass 
+	def mean_coordinates(in_points, out_point, in_weightfield=None, in_uniquefield=None,):
+		in_points = layers.create_shp(in_points)
+		self.p.runalg("qgis:meancoordinates", in_points, in_weightfield, in_uniquefield, out_point)
+	def nearest_neighbour(in_points, out_html):
+		in_points = layers.create_shp(in_points)
+		self.p.runalg("qgis:nearestneighbouranalysis", in_points, out_html)
+	def sum_line_lengths(in_lines, in_polygons, length_field="LENGTH", count_field="COUNT", out_lines):
+		in_lines = layers.create_shp(in_lines)
+		in_polygons = layers.create_shp(in_polygons)
+		p.runalg("qgis:sumlinelengths", in_lines, in_polygons, length_field, count_field, out_lines)
+	
 
 # VectorB contains functions that require the use of OGR functions (Select)
 
