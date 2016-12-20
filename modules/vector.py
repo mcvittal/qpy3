@@ -140,7 +140,6 @@ class VectorA():
 		in_points = layers.create_shp(in_points)
 		target_points = layers.create_shp(target_points)
 		self.p.runalg("qgis:distancematrix", in_points, in_field, target_points, target_field, matrix_type, nearest_points, output_table)
-	
 	# generate_points_along_line_pixel: String String String --> None
 	#
 	# Produces points along a line, but they are the centroids of the pixels the line passes through, not necessarily directly on the line.
@@ -170,7 +169,7 @@ class VectorA():
 		p.runalg("qgis:sumlinelengths", in_lines, in_polygons, length_field, count_field, out_lines)
 	
 	def create_vectorgrid(self, extent_layer, grid_x, grid_y, type, out_vector):
-	
+                pass
 
 # VectorB contains functions that require the use of OGR functions (Select)
 
