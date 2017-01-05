@@ -41,10 +41,10 @@ class VectorA():
 	#
 	# in_shp and erase_shp must be valid paths to ESRI shapefile datatypes, and out_shp must be a non-existing ESRI shp file in an existing folder.
 	
-	def erase(self, in_shp, erase_shp, out_shp):
+	def erase(self, in_shp, erase_shp, out_shp, ignore_invalid=False):
 		in_shp = layers.create_shp(in_shp)
 		erase_shp = layers.create_shp(erase_shp)
-		self.p.runalg("qgis:difference", in_shp, erase_shp, out_shp)
+		self.p.runalg("qgis:difference", in_shp, erase_shp, ignore_invalid, out_shp)
 	
 	# union: in_shp, in_shp2, out_shp --> None
 	#
@@ -55,6 +55,7 @@ class VectorA():
 	def union(self, in_shp, in_shp2, out_shp):
 		in_shp = layers.create_shp(in_shp)
 		in_shp2 = layers.create_shp(in_shp2)
+		print "ayy"
 		self.p.runalg("qgis:union", in_shp, in_shp2, out_shp)
 	
 	# merge: in_shp, in_shp2, out_shp --> None
