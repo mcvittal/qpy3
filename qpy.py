@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from modules.processing_obj import Qprocess
 from modules.processing_functions import CoreFunctions
-from modules.layers import *
+from modules.layers import Layers
 from modules.vector import VectorA
 '''
 
@@ -15,6 +15,7 @@ g = q.getp()
 
 core = CoreFunctions(g, q)
 vector_basic = VectorA(g)
+layer = Layers(g)
 #raster_basic = RasterA(g)
 #raster_basic = RasterA(g)
 
