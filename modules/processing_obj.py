@@ -110,6 +110,7 @@ os.environ['QGIS_DEBUG'] = '-1'
 
 # Imports
 from qgis.core import *
+
 from qgis.gui import *
 
 # init_qprocess: None --> class processing.tools.general
@@ -117,7 +118,6 @@ from qgis.gui import *
 def init_qprocess():
 	QgsApplication.setPrefixPath(qgsapplication_prefix, True)
 	app = QgsApplication([], True)
-	QgsApplication.initQgis()
 	from PyQt4 import QtCore, QtGui
 	import processing
 	from processing.core.Processing import Processing
@@ -127,7 +127,11 @@ def init_qprocess():
 	iface = DummyInterface()
 	plugin = processing.classFactory(iface)
 	Processing.initialize()
+	QgsApplication.initQgis()
 	return g
+
+
+		
 
 class Qprocess():
 	def __init__(self):

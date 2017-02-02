@@ -16,6 +16,9 @@ g = q.getp()
 core = CoreFunctions(g, q)
 vector_basic = VectorA(g)
 layer = Layers(g)
+
+qcore = layer.get_qgc()
+
 #raster_basic = RasterA(g)
 #raster_basic = RasterA(g)
 
