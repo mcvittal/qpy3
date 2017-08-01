@@ -23,7 +23,14 @@ REM Call the python script passed in
 IF NOT EXIST "%folder%\bin\python-qgis-ltr.bat" GOTO NONLTR
 "%folder%\OSGeo4W.bat" "%folder%\bin\python-qgis-ltr.bat" %1
 
+GOTO END
+
 :NONLTR
 "%folder%\OSGeo4W.bat" "%folder%\bin\python-qgis.bat" %1
 
+:END
 
+for %%* in (.) do set CurrDirName=%%~nx*
+
+
+set PATH=%PATH%;%CurrDirName%

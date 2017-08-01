@@ -6,6 +6,7 @@ from PyQt4.QtCore import QFileInfo,QSettings
 from qgis.core import QgsRasterLayer
 from qgis.networkanalysis import *
 import qgis.core as qgc
+from qgis.gui import QgisInterface
 
 # create_shp: String -> QgsVectorLayer
 # Easily create a QGIS vector shapefile layer.
@@ -17,21 +18,26 @@ class Layers():
 	# create_crs: Int -> QgsCoordinateReferenceSystem
 	# Takes in a CRS ID and returns the appropriate CRS Object.
 	def create_crs(self, crsID):
-		return qgc.QgsCoordinateReferenceSystem(crsID, qgc.QgsCoordinateReferenceSystem.EpsgCrsId)
+		crs = qgc.QgsCoordinateReferenceSystem()
+		crs.createFromId(crsID)
+		return crs
 	
-	def create_shp(self, shpfile_path, crs=None):
+	def create_shp(self, shpfile_path, crsID=None):
 		fileInfo = QFileInfo(shpfile_path)
 		baseName = fileInfo.baseName()
+		
 		try:
 			layer = qgc.QgsVectorLayer(shpfile_path, baseName, "none")
 		except:
 			layer = qgc.QgsVectorLayer(shpfile_path, baseName, "none")
-		if crs != None:
-			crs = qgc.QgsCoordinateReferenceSystem(crs, qgc.QgsCoordinateReferenceSystem.EpsgCrsId)
-			layer.setCrs(crs)
-			return layer 
+		sourceCrs = layer.crs()
+		destCrs = None
+		if crsID == None:
+			destCrs = qgc.QgsCoordinateReferenceSystem(4326)
 		else:
-			return layer
+			destCrs = qgc.QgsCoordinateReferenceSystem(crsID)
+		
+		return layer
 		
 	# create_raster: String -> QgsRasterLayer
 	# Easily create a QGIS raster layer.
@@ -42,12 +48,12 @@ class Layers():
 		if (baseName and path):
 			layer = QgsRasterLayer(path, baseName)
 		if crs != None:
-			crs = qgc.QgsCoordinateReferenceSystem(crs, qgc.QgsCoordinateReferenceSystem.EpsgCrsId)
 			layer.setCrs(crs)
 			return layer 
 		else:
-			return Layer
-	# create_table: String -> 
+			return layer
+	# create_table: String -> None 
+	
 	
 	def create_table(self, table_path):
 		fileInfo = QFileInfo(table_path)
@@ -55,6 +61,7 @@ class Layers():
 		path = fileInfo.filePath()
 	
 	def get_bounding(self, layer):
+		#QgsMapLayerRegistry.instance().addMapLayer(layer)
 		extent = layer.extent()
 		xmin = extent.xMinimum()
 		xmax = extent.xMaximum()
@@ -65,6 +72,9 @@ class Layers():
 	def get_qgc(self):
 		return qgc
 	
+	def get_interface(self):
+		iface = QgisInterface
+		return iface
 	
 	
 	

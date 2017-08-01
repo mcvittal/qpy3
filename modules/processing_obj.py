@@ -1,7 +1,6 @@
 #!/usr/bin/env python2
 
-import sys, os, platform
-
+import sys, os, platform, qgis.core
 
 # Creates a dummy QGIS interface for the processing objects to interact with
 class DummyInterface(object):
@@ -18,7 +17,8 @@ class DummyInterface(object):
 	def layers(self):
 		# simulate iface.legendInterface().layers()
 		return qgis.core.QgsMapLayerRegistry.instance().mapLayers().values()
-	
+	def reg_instance(self):
+		return qgis.core.QgsMapLayerRegistry.instance()
 # get_qgisprefix: None --> String
 # Determines the install path of QGIS if it is in Windows, or if it is on Linux, returns "/usr"
 
@@ -140,3 +140,6 @@ class Qprocess():
 	# Gets a processing object.
 	def getp(self):
 		return init_qprocess()
+	def getdummy(self):
+		iface = DummyInterface()
+		return iface
