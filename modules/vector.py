@@ -21,9 +21,11 @@ class VectorA():
 	# in_shp and clip_shp must both be valid fullpaths to shape files
 	# out_shp must be a valid path to a shp file (doesnt have to exist)
 	def clip(self, in_shp, clip_shp, out_shp):
-		in_shp = self.Layers.create_shp(in_shp)
-		clip_shp = self.Layers.create_shp(clip_shp)
-		self.p.runalg("qgis:clip", in_shp, clip_shp, out_shp)
+		in_shp = self.self.Layers.create_shp(in_shp)
+		clip_shp = self.self.Layers.create_shp(clip_shp)
+		#print(in_shp)
+		#print(clip_shp)
+		self.p.run("qgis:clip", in_shp, clip_shp, out_shp)
 
 	
 
@@ -33,9 +35,9 @@ class VectorA():
 	#
 	# in_shp and in_shp2 must be a valid path to a valid ESRI shapefile datatype, and out_shp must be a non-existing ESRI shp file in an actual existing folder
 	def intersect(self, in_shp, in_shp2, out_shp):
-		in_shp = layers.create_shp(in_shp)
-		in_shp2 = layers.create_shp(in_shp2)
-		self.p.runalg("qgis:intersection", in_shp, in_shp2, out_shp)
+		in_shp = self.Layers.create_shp(in_shp)
+		in_shp2 = self.Layers.create_shp(in_shp2)
+		self.p.run("qgis:intersection", in_shp, in_shp2, out_shp)
 	# erase: String String String --> None
 	# 
 	# Erases features from the in_shp polygon that overlap the erase_shp polygon.
@@ -43,9 +45,9 @@ class VectorA():
 	# in_shp and erase_shp must be valid paths to ESRI shapefile datatypes, and out_shp must be a non-existing ESRI shp file in an existing folder.
 	
 	def erase(self, in_shp, erase_shp, out_shp, ignore_invalid=False):
-		in_shp = layers.create_shp(in_shp)
-		erase_shp = layers.create_shp(erase_shp)
-		self.p.runalg("qgis:difference", in_shp, erase_shp, ignore_invalid, out_shp)
+		in_shp = self.Layers.create_shp(in_shp)
+		erase_shp = self.Layers.create_shp(erase_shp)
+		self.p.run("qgis:difference", in_shp, erase_shp, ignore_invalid, out_shp)
 	
 	# union: in_shp, in_shp2, out_shp --> None
 	#
@@ -54,9 +56,9 @@ class VectorA():
 	# in_shp and in_shp2 must be valid paths to ESRI shapefile datatypes, and out_shp must be a non-existing ESRI shp file in an existing folder.
 	
 	def union(self, in_shp, in_shp2, out_shp):
-		in_shp = layers.create_shp(in_shp)
-		in_shp2 = layers.create_shp(in_shp2)
-		self.p.runalg("qgis:union", in_shp, in_shp2, out_shp)
+		in_shp = self.Layers.create_shp(in_shp)
+		in_shp2 = self.Layers.create_shp(in_shp2)
+		self.p.run("qgis:union", in_shp, in_shp2, out_shp)
 	
 	# merge: in_shp, in_shp2, out_shp --> None
 	# 
@@ -65,7 +67,7 @@ class VectorA():
 	# in_shp and in_shp2 must be valid paths to ESRI shapefile datatypes, and out_shp must be a non-existing ESRI shp file in an existing folder.
 	
 	def merge(self, in_shp, in_shp2, out_shp):
-		self.p.runalg("qgis:mergevectorlayers", in_shp + ";" + in_shp2, out_shp)
+		self.p.run("qgis:mergevectorlayers", in_shp + ";" + in_shp2, out_shp)
 	
 	# merge_multiple: (list String) String --> None
 	#
@@ -78,7 +80,7 @@ class VectorA():
 		for shp in shp_lst:
 			shps += shp + ";"
 		shps = shps[:-1]
-		self.p.runalg("qgis:mergevectorlayers", shps, out_shp)
+		self.p.run("qgis:mergevectorlayers", shps, out_shp)
 	
 	# merge_folder: String String Boolean --> None
 	#
@@ -100,7 +102,7 @@ class VectorA():
 	# Must be a valid shapefile. field_name must be a non-existent field in in_shp. Out_shp must be a non-existing ESRI shp file in an existing folder.
 
 	def add_field(self, in_shp, field_name, field_type, field_length, field_precision, output_layer):
-		in_shp = layers.create_shp(in_shp)
+		in_shp = self.Layers.create_shp(in_shp)
 		if field_type.lower() == "integer":
 			ft = "integer"
 			field_type = 0
@@ -111,7 +113,7 @@ class VectorA():
 			ft = "string"
 			field_type = 2
 		print("Generating field {} of type {}.".format(field_name, ft))	
-		self.p.runalg("qgis:addfieldtoattributestable", in_shp, field_name, field_type, field_length, field_precision, output_later)
+		self.p.run("qgis:addfieldtoattributestable", in_shp, field_name, field_type, field_length, field_precision, output_later)
 
 	# count_points_in_polygon: String String String String --> None
 	# 
@@ -120,9 +122,9 @@ class VectorA():
 	# Must be a valid point shapefile and a valid polygon shapefile. count_field must a non-existent field in the in_polygon attribute table. Out_shp must be a non-existing ESRI shp file in an existing folder.
 	
 	def count_points_in_polygon(self, in_polygon, in_points, count_field, out_polygon):
-		in_polygon = layers.create_shp(in_polygon)
-		in_points = layers.create_shp(in_points)
-		self.p.runalg("qgis:countpointsinpolygon", in_polygon, in_points, count_field, out_polygon)
+		in_polygon = self.Layers.create_shp(in_polygon)
+		in_points = self.Layers.create_shp(in_points)
+		self.p.run("qgis:countpointsinpolygon", in_polygon, in_points, count_field, out_polygon)
 		
 	# count_unique_points_in_polygon: String String String String String --> None
 	#
@@ -130,44 +132,44 @@ class VectorA():
 	#
 	# Must be a valid point shapefile and a valid polygon shapefile. unique_field must be aan existing field in the in_points attribute table. count_field must a non-existent field in the in_polygon attribute table. Out_shp must be a non-existing ESRI shp file in an existing folder.
 	def count_unique_points_in_polygon(self, in_polygon, in_points, unique_field, count_field, out_polygon):
-		in_polygon = layers.create_shp(in_polygon)
-		in_points = layers.create_shp(in_points)
-		self.p.runalg("qgis:countuniquepointsinpolygon", in_polygon, in_points, unique_field, count_field, out_polygon)
+		in_polygon = self.Layers.create_shp(in_polygon)
+		in_points = self.Layers.create_shp(in_points)
+		self.p.run("qgis:countuniquepointsinpolygon", in_polygon, in_points, unique_field, count_field, out_polygon)
 	# distance_matrix: String String String String Integer Integer String --> None
 	#
 	# Produces a near table in CSV format between two point cloud datasets. 
 	
 	def distance_matrix(self, in_points, in_field, target_points, target_field, matrix_type, nearest_points, output_table):
-		in_points = layers.create_shp(in_points)
-		target_points = layers.create_shp(target_points)
-		self.p.runalg("qgis:distancematrix", in_points, in_field, target_points, target_field, matrix_type, nearest_points, output_table)
+		in_points = self.Layers.create_shp(in_points)
+		target_points = self.Layers.create_shp(target_points)
+		self.p.run("qgis:distancematrix", in_points, in_field, target_points, target_field, matrix_type, nearest_points, output_table)
 	# generate_points_along_line_pixel: String String String --> None
 	#
 	# Produces points along a line, but they are the centroids of the pixels the line passes through, not necessarily directly on the line.
 	#
 	# 
 	def generate_points_along_line_pixel(self, in_line, in_raster, out_points):
-		in_line = layers.create_shp(in_line)
-		in_raster = layers.create_raster(in_raster)
-		self.p.runalg("qgis:generatepointspixelcentroidsalongline", in_line, in_raster, out_points)
+		in_line = self.Layers.create_shp(in_line)
+		in_raster = self.Layers.create_raster(in_raster)
+		self.p.run("qgis:generatepointspixelcentroidsalongline", in_line, in_raster, out_points)
 	def generate_points_inside_polygon_pixel(self, in_polygon, in_raster, out_points):
-		in_polygon = layers.create_shp(in_polygon)
-		in_raster = layers.create_raster(in_raster)
-		self.p.runalg("qgis:generatepointspixelcentroidsinsidepolygons", in_polygon, in_raster, out_points)
+		in_polygon = self.Layers.create_shp(in_polygon)
+		in_raster = self.Layers.create_raster(in_raster)
+		self.p.run("qgis:generatepointspixelcentroidsinsidepolygons", in_polygon, in_raster, out_points)
 	def hublines(self, in_hub_points, hub_id_field, in_spoke_points, spoke_id_field, out_hub_lines):
-		in_hub_points = layers.create_shp(in_hub_points)
-		in_spoke_points = layers.create_shp(in_spoke_points)
-		self.p.runalg("qgis:hublines", in_hub_points, hub_id_field, in_spoke_points, spoke_id_field, out_hub_lines)
+		in_hub_points = self.Layers.create_shp(in_hub_points)
+		in_spoke_points = self.Layers.create_shp(in_spoke_points)
+		self.p.run("qgis:hublines", in_hub_points, hub_id_field, in_spoke_points, spoke_id_field, out_hub_lines)
 	def mean_coordinates(self, in_points, out_point, in_weightfield=None, in_uniquefield=None,):
-		in_points = layers.create_shp(in_points)
-		self.p.runalg("qgis:meancoordinates", in_points, in_weightfield, in_uniquefield, out_point)
+		in_points = self.Layers.create_shp(in_points)
+		self.p.run("qgis:meancoordinates", in_points, in_weightfield, in_uniquefield, out_point)
 	def nearest_neighbour(self, in_points, out_html):
-		in_points = layers.create_shp(in_points)
-		self.p.runalg("qgis:nearestneighbouranalysis", in_points, out_html)
+		in_points = self.Layers.create_shp(in_points)
+		self.p.run("qgis:nearestneighbouranalysis", in_points, out_html)
 	def sum_line_lengths(self, in_lines, in_polygons, out_lines, length_field="LENGTH", count_field="COUNT"):
-		in_lines = layers.create_shp(in_lines)
-		in_polygons = layers.create_shp(in_polygons)
-		p.runalg("qgis:sumlinelengths", in_lines, in_polygons, length_field, count_field, out_lines)
+		in_lines = self.Layers.create_shp(in_lines)
+		in_polygons = self.Layers.create_shp(in_polygons)
+		p.run("qgis:sumlinelengths", in_lines, in_polygons, length_field, count_field, out_lines)
 	
 	def create_vectorgrid(self, extent_layer, grid_x, grid_y, type, out_vector):
                 pass
