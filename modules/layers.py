@@ -2,9 +2,9 @@
 
 import sys
 from processing_obj import Qprocess
-from PyQt4.QtCore import QFileInfo,QSettings
+from PyQt5.QtCore import QFileInfo,QSettings
 from qgis.core import QgsRasterLayer
-from qgis.networkanalysis import *
+# from qgis.networkanalysis import *
 import qgis.core as qgc
 from qgis.gui import QgisInterface
 

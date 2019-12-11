@@ -12,6 +12,7 @@ import os
 class VectorA():
 	def __init__(self, _p=None):
 		self.p = _p
+		self.Layers = layers.Layers(self.p)
 
 	# Clip: String String String --> None
 	# 
@@ -20,8 +21,8 @@ class VectorA():
 	# in_shp and clip_shp must both be valid fullpaths to shape files
 	# out_shp must be a valid path to a shp file (doesnt have to exist)
 	def clip(self, in_shp, clip_shp, out_shp):
-		in_shp = layers.create_shp(in_shp)
-		clip_shp = layers.create_shp(clip_shp)
+		in_shp = self.Layers.create_shp(in_shp)
+		clip_shp = self.Layers.create_shp(clip_shp)
 		self.p.runalg("qgis:clip", in_shp, clip_shp, out_shp)
 
 	
@@ -55,7 +56,6 @@ class VectorA():
 	def union(self, in_shp, in_shp2, out_shp):
 		in_shp = layers.create_shp(in_shp)
 		in_shp2 = layers.create_shp(in_shp2)
-		print "ayy"
 		self.p.runalg("qgis:union", in_shp, in_shp2, out_shp)
 	
 	# merge: in_shp, in_shp2, out_shp --> None

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from modules.processing_obj import Qprocess
 from modules.processing_functions import CoreFunctions
 from modules.layers import Layers

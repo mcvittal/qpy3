@@ -25,7 +25,7 @@ class DummyInterface(object):
 def get_qgisprefix():
 	this_os = platform.platform().lower()
 	if "windows" in this_os:
-		print "Initializing for a Windows system"
+		print("Initializing for a Windows system")
 		qgis_folder = None
 		is_osgeo = True
 		
@@ -73,7 +73,7 @@ def get_qgisprefix():
 			elif not is_osgeo:
 				return os.path.join(qgis_base, "apps", "qgis")
 	else:
-		print "Initializing for a UNIX system"
+		print("Initializing for a UNIX system")
 		return "/usr"
 
 # init_path: None --> String
@@ -94,11 +94,11 @@ def init_path():
 		return os.path.join(prefix, "apps", qgis_subdir)
 		
 	else:
-		os.environ['PATH'] = qgisprefix + '/bin'
-		os.environ['LD_LIBRARY_PATH'] = qgisprefix+'/lib'
+		os.environ['PATH'] = prefix + '/bin'
+		os.environ['LD_LIBRARY_PATH'] = prefix+'/lib'
 		#Allows for stderr and stdout to be printed to screen - QGIS swallows it otherwise 
-		sys.path.insert(0, qgisprefix+'/share/qgis/python')
-		sys.path.insert(1, qgisprefix+'/share/qgis/python/plugins')
+		sys.path.insert(0, prefix+'/share/qgis/python')
+		sys.path.insert(1, prefix+'/share/qgis/python/plugins')
 		return "/usr"
 
 		
@@ -118,7 +118,7 @@ from qgis.gui import *
 def init_qprocess():
 	QgsApplication.setPrefixPath(qgsapplication_prefix, True)
 	app = QgsApplication([], True)
-	from PyQt4 import QtCore, QtGui
+	from PyQt5 import QtCore, QtGui
 	import processing
 	from processing.core.Processing import Processing
 	from processing.tools import general as g

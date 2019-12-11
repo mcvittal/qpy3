@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from processing_obj import Qprocess
 class CoreFunctions():
 	def __init__(self, _p=None, _qgpy=None):
