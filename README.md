@@ -12,6 +12,25 @@ On Ubuntu, simply run setup.sh. It will install the necessary dependencies. xvfb
 
 An update to this library to work with Windows is coming soon! Stay tuned. 
 
+# Using the library 
+
+Example: Buffer your data
+
+```
+from qpy3 import Qpy 
+
+distance = 2 # decimal degrees in a geographic CRS, meters in a projected CRS
+
+in_shp = "/path/to/shapefile.shp"
+
+out_shp = "/path/to/output/shapefile.shp"
+
+Qpy.Buffer(in_shp, out_shp, distance)
+
+# Close the dummy QGIS instance
+Qpy.close()
+```
+
 # Testing
 
 To ensure that it works, run the `test.py` script available in the tests subfolder. It will run some basic geoprocessing tools on the sample data provided in the repo. 
