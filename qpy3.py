@@ -34,12 +34,18 @@ import processing
 Processing.initialize()
 
 class Qpy(Analysis, LicenseManager):
-    pass
+    def close(self):
+        # Exit applications
+        QgsApplication.exitQgis()
+        QgsApplication.exit()
 
 Qpy = Qpy(processing, Processing)
 
 
 # Helpful general functions go here 
-def list_all_algorithms():
+def list_all_algorithms(self):
     for alg in QgsApplication.processingRegistry().algorithms():
         print("{}:{} --> {}".format(alg.provider().name(), alg.name(), alg.displayName()))
+
+
+
