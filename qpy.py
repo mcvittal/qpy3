@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-from modules.processing_obj import Qprocess
-from modules.processing_functions import CoreFunctions
+from modules.processing_obj import Qprocess,  CoreFunctions
 from modules.layers import Layers
 from modules.vector import VectorA
 

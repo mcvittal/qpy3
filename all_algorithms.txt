@@ -1,0 +1,825 @@
+GDAL:aspect --> Aspect
+GDAL:assignprojection --> Assign projection
+GDAL:buffervectors --> Buffer vectors
+GDAL:buildvirtualraster --> Build virtual raster
+GDAL:cliprasterbyextent --> Clip raster by extent
+GDAL:cliprasterbymasklayer --> Clip raster by mask layer
+GDAL:clipvectorbyextent --> Clip vector by extent
+GDAL:clipvectorbypolygon --> Clip vector by mask layer
+GDAL:colorrelief --> Color relief
+GDAL:contour --> Contour
+GDAL:convertformat --> Convert format
+GDAL:dissolve --> Dissolve
+GDAL:executesql --> Execute SQL
+GDAL:extractprojection --> Extract projection
+GDAL:fillnodata --> Fill nodata
+GDAL:gdal2tiles --> gdal2tiles
+GDAL:gdal2xyz --> gdal2xyz
+GDAL:gdalinfo --> Raster information
+GDAL:gridaverage --> Grid (Moving average)
+GDAL:griddatametrics --> Grid (Data metrics)
+GDAL:gridinversedistance --> Grid (Inverse distance to a power)
+GDAL:gridinversedistancenearestneighbor --> Grid (IDW with nearest neighbor searching)
+GDAL:gridlinear --> Grid (Linear)
+GDAL:gridnearestneighbor --> Grid (Nearest neighbor)
+GDAL:hillshade --> Hillshade
+GDAL:importvectorintopostgisdatabaseavailableconnections --> Export to PostgreSQL (available connections)
+GDAL:importvectorintopostgisdatabasenewconnection --> Export to PostgreSQL (new connection)
+GDAL:merge --> Merge
+GDAL:nearblack --> Near black
+GDAL:offsetcurve --> Offset curve
+GDAL:ogrinfo --> Vector information
+GDAL:onesidebuffer --> One side buffer
+GDAL:overviews --> Build overviews (pyramids)
+GDAL:pansharp --> Pansharpening
+GDAL:pcttorgb --> PCT to RGB
+GDAL:pointsalonglines --> Points along lines
+GDAL:polygonize --> Polygonize (raster to vector)
+GDAL:proximity --> Proximity (raster distance)
+GDAL:rastercalculator --> Raster calculator
+GDAL:rasterize --> Rasterize (vector to raster)
+GDAL:rasterize_over --> Rasterize (overwrite with attribute)
+GDAL:rasterize_over_fixed_value --> Rasterize (overwrite with fixed value)
+GDAL:rearrange_bands --> Rearrange bands
+GDAL:retile --> Retile
+GDAL:rgbtopct --> RGB to PCT
+GDAL:roughness --> Roughness
+GDAL:sieve --> Sieve
+GDAL:slope --> Slope
+GDAL:tileindex --> Tile index
+GDAL:tpitopographicpositionindex --> Topographic Position Index (TPI)
+GDAL:translate --> Translate (convert format)
+GDAL:triterrainruggednessindex --> Terrain Ruggedness Index (TRI)
+GDAL:warpreproject --> Warp (reproject)
+GRASS:i.albedo --> i.albedo
+GRASS:i.aster.toar --> i.aster.toar
+GRASS:i.atcorr --> i.atcorr
+GRASS:i.biomass --> i.biomass
+GRASS:i.cca --> i.cca
+GRASS:i.cluster --> i.cluster
+GRASS:i.colors.enhance --> i.colors.enhance
+GRASS:i.eb.eta --> i.eb.eta
+GRASS:i.eb.evapfr --> i.eb.evapfr
+GRASS:i.eb.hsebal01.coords --> i.eb.hsebal01.coords
+GRASS:i.eb.netrad --> i.eb.netrad
+GRASS:i.eb.soilheatflux --> i.eb.soilheatflux
+GRASS:i.emissivity --> i.emissivity
+GRASS:i.evapo.mh --> i.evapo.mh
+GRASS:i.evapo.pm --> i.evapo.pm
+GRASS:i.evapo.pt --> i.evapo.pt
+GRASS:i.evapo.time --> i.evapo.time
+GRASS:i.fft --> i.fft
+GRASS:i.gensig --> i.gensig
+GRASS:i.gensigset --> i.gensigset
+GRASS:i.group --> i.group
+GRASS:i.his.rgb --> i.his.rgb
+GRASS:i.ifft --> i.ifft
+GRASS:i.image.mosaic --> i.image.mosaic
+GRASS:i.in.spotvgt --> i.in.spotvgt
+GRASS:i.landsat.acca --> i.landsat.acca
+GRASS:i.landsat.toar --> i.landsat.toar
+GRASS:i.maxlik --> i.maxlik
+GRASS:i.modis.qc --> i.modis.qc
+GRASS:i.oif --> i.oif
+GRASS:i.pansharpen --> i.pansharpen
+GRASS:i.pca --> i.pca
+GRASS:i.rgb.his --> i.rgb.his
+GRASS:i.segment --> i.segment
+GRASS:i.smap --> i.smap
+GRASS:i.tasscap --> i.tasscap
+GRASS:i.topo.coor.ill --> i.topo.coor.ill
+GRASS:i.topo.corr --> i.topo.corr
+GRASS:i.vi --> i.vi
+GRASS:i.zc --> i.zc
+GRASS:m.cogo --> m.cogo
+GRASS:nviz --> nviz
+GRASS:r.basins.fill --> r.basins.fill
+GRASS:r.blend.combine --> r.blend.combine
+GRASS:r.blend.rgb --> r.blend.rgb
+GRASS:r.buffer --> r.buffer
+GRASS:r.buffer.lowmem --> r.buffer.lowmem
+GRASS:r.carve --> r.carve
+GRASS:r.category --> r.category
+GRASS:r.category.out --> r.category.out
+GRASS:r.circle --> r.circle
+GRASS:r.clump --> r.clump
+GRASS:r.coin --> r.coin
+GRASS:r.colors --> r.colors
+GRASS:r.colors.out --> r.colors.out
+GRASS:r.colors.stddev --> r.colors.stddev
+GRASS:r.composite --> r.composite
+GRASS:r.contour --> r.contour
+GRASS:r.cost --> r.cost
+GRASS:r.covar --> r.covar
+GRASS:r.cross --> r.cross
+GRASS:r.describe --> r.describe
+GRASS:r.distance --> r.distance
+GRASS:r.drain --> r.drain
+GRASS:r.fill.dir --> r.fill.dir
+GRASS:r.fill.stats --> r.fill.stats
+GRASS:r.fillnulls --> r.fillnulls
+GRASS:r.flow --> r.flow
+GRASS:r.geomorphon --> r.geomorphon
+GRASS:r.grow --> r.grow
+GRASS:r.grow.distance --> r.grow.distance
+GRASS:r.gwflow --> r.gwflow
+GRASS:r.his --> r.his
+GRASS:r.horizon --> r.horizon
+GRASS:r.horizon.height --> r.horizon.height
+GRASS:r.in.lidar --> r.in.lidar
+GRASS:r.in.lidar.info --> r.in.lidar.info
+GRASS:r.info --> r.info
+GRASS:r.kappa --> r.kappa
+GRASS:r.lake --> r.lake
+GRASS:r.latlong --> r.latlong
+GRASS:r.li.cwed --> r.li.cwed
+GRASS:r.li.cwed.ascii --> r.li.cwed.ascii
+GRASS:r.li.dominance --> r.li.dominance
+GRASS:r.li.dominance.ascii --> r.li.dominance.ascii
+GRASS:r.li.edgedensity --> r.li.edgedensity
+GRASS:r.li.edgedensity.ascii --> r.li.edgedensity.ascii
+GRASS:r.li.mpa --> r.li.mpa
+GRASS:r.li.mpa.ascii --> r.li.mpa.ascii
+GRASS:r.li.mps --> r.li.mps
+GRASS:r.li.mps.ascii --> r.li.mps.ascii
+GRASS:r.li.padcv --> r.li.padcv
+GRASS:r.li.padcv.ascii --> r.li.padcv.ascii
+GRASS:r.li.padrange --> r.li.padrange
+GRASS:r.li.padrange.ascii --> r.li.padrange.ascii
+GRASS:r.li.padsd --> r.li.padsd
+GRASS:r.li.padsd.ascii --> r.li.padsd.ascii
+GRASS:r.li.patchdensity --> r.li.patchdensity
+GRASS:r.li.patchdensity.ascii --> r.li.patchdensity.ascii
+GRASS:r.li.patchnum --> r.li.patchnum
+GRASS:r.li.patchnum.ascii --> r.li.patchnum.ascii
+GRASS:r.li.pielou --> r.li.pielou
+GRASS:r.li.pielou.ascii --> r.li.pielou.ascii
+GRASS:r.li.renyi --> r.li.renyi
+GRASS:r.li.renyi.ascii --> r.li.renyi.ascii
+GRASS:r.li.richness --> r.li.richness
+GRASS:r.li.richness.ascii --> r.li.richness.ascii
+GRASS:r.li.shannon --> r.li.shannon
+GRASS:r.li.shannon.ascii --> r.li.shannon.ascii
+GRASS:r.li.shape --> r.li.shape
+GRASS:r.li.shape.ascii --> r.li.shape.ascii
+GRASS:r.li.simpson --> r.li.simpson
+GRASS:r.li.simpson.ascii --> r.li.simpson.ascii
+GRASS:r.mapcalc.simple --> r.mapcalc.simple
+GRASS:r.mask.rast --> r.mask.rast
+GRASS:r.mask.vect --> r.mask.vect
+GRASS:r.mfilter --> r.mfilter
+GRASS:r.mode --> r.mode
+GRASS:r.neighbors --> r.neighbors
+GRASS:r.null --> r.null
+GRASS:r.out.ascii --> r.out.ascii
+GRASS:r.out.gridatb --> r.out.gridatb
+GRASS:r.out.mat --> r.out.mat
+GRASS:r.out.mpeg --> r.out.mpeg
+GRASS:r.out.png --> r.out.png
+GRASS:r.out.pov --> r.out.pov
+GRASS:r.out.ppm --> r.out.ppm
+GRASS:r.out.ppm3 --> r.out.ppm3
+GRASS:r.out.vrml --> r.out.vrml
+GRASS:r.out.vtk --> r.out.vtk
+GRASS:r.out.xyz --> r.out.xyz
+GRASS:r.param.scale --> r.param.scale
+GRASS:r.patch --> r.patch
+GRASS:r.plane --> r.plane
+GRASS:r.profile --> r.profile
+GRASS:r.proj --> r.proj
+GRASS:r.quant --> r.quant
+GRASS:r.quantile --> r.quantile
+GRASS:r.random --> r.random
+GRASS:r.random.cells --> r.random.cells
+GRASS:r.random.surface --> r.random.surface
+GRASS:r.reclass --> r.reclass
+GRASS:r.reclass.area --> r.reclass.area
+GRASS:r.recode --> r.recode
+GRASS:r.regression.line --> r.regression.line
+GRASS:r.regression.multi --> r.regression.multi
+GRASS:r.relief --> r.relief
+GRASS:r.relief.scaling --> r.relief.scaling
+GRASS:r.report --> r.report
+GRASS:r.resamp.bspline --> r.resamp.bspline
+GRASS:r.resamp.filter --> r.resamp.filter
+GRASS:r.resamp.interp --> r.resamp.interp
+GRASS:r.resamp.rst --> r.resamp.rst
+GRASS:r.resamp.stats --> r.resamp.stats
+GRASS:r.resample --> r.resample
+GRASS:r.rescale --> r.rescale
+GRASS:r.rescale.eq --> r.rescale.eq
+GRASS:r.rgb --> r.rgb
+GRASS:r.ros --> r.ros
+GRASS:r.series --> r.series
+GRASS:r.series.accumulate --> r.series.accumulate
+GRASS:r.series.interp --> r.series.interp
+GRASS:r.shade --> r.shade
+GRASS:r.sim.sediment --> r.sim.sediment
+GRASS:r.sim.water --> r.sim.water
+GRASS:r.slope.aspect --> r.slope.aspect
+GRASS:r.solute.transport --> r.solute.transport
+GRASS:r.spread --> r.spread
+GRASS:r.spreadpath --> r.spreadpath
+GRASS:r.statistics --> r.statistics
+GRASS:r.stats --> r.stats
+GRASS:r.stats.quantile.out --> r.stats.quantile.out
+GRASS:r.stats.quantile.rast --> r.stats.quantile.rast
+GRASS:r.stats.zonal --> r.stats.zonal
+GRASS:r.stream.extract --> r.stream.extract
+GRASS:r.sun.incidout --> r.sun.incidout
+GRASS:r.sun.insoltime --> r.sun.insoltime
+GRASS:r.sunhours --> r.sunhours
+GRASS:r.sunmask.datetime --> r.sunmask.datetime
+GRASS:r.sunmask.position --> r.sunmask.position
+GRASS:r.surf.area --> r.surf.area
+GRASS:r.surf.contour --> r.surf.contour
+GRASS:r.surf.fractal --> r.surf.fractal
+GRASS:r.surf.gauss --> r.surf.gauss
+GRASS:r.surf.idw --> r.surf.idw
+GRASS:r.surf.random --> r.surf.random
+GRASS:r.terraflow --> r.terraflow
+GRASS:r.texture --> r.texture
+GRASS:r.thin --> r.thin
+GRASS:r.tile --> r.tile
+GRASS:r.tileset --> r.tileset
+GRASS:r.to.vect --> r.to.vect
+GRASS:r.topidx --> r.topidx
+GRASS:r.topmodel --> r.topmodel
+GRASS:r.topmodel.topidxstats --> r.topmodel.topidxstats
+GRASS:r.transect --> r.transect
+GRASS:r.univar --> r.univar
+GRASS:r.uslek --> r.uslek
+GRASS:r.usler --> r.usler
+GRASS:r.viewshed --> r.viewshed
+GRASS:r.volume --> r.volume
+GRASS:r.walk.coords --> r.walk.coords
+GRASS:r.walk.points --> r.walk.points
+GRASS:r.walk.rast --> r.walk.rast
+GRASS:r.water.outlet --> r.water.outlet
+GRASS:r.watershed --> r.watershed
+GRASS:r.what.color --> r.what.color
+GRASS:r.what.coords --> r.what.coords
+GRASS:r.what.points --> r.what.points
+GRASS:v.buffer --> v.buffer
+GRASS:v.build.check --> v.build.check
+GRASS:v.build.polylines --> v.build.polylines
+GRASS:v.class --> v.class
+GRASS:v.clean --> v.clean
+GRASS:v.cluster --> v.cluster
+GRASS:v.db.select --> v.db.select
+GRASS:v.decimate --> v.decimate
+GRASS:v.delaunay --> v.delaunay
+GRASS:v.dissolve --> v.dissolve
+GRASS:v.distance --> v.distance
+GRASS:v.drape --> v.drape
+GRASS:v.edit --> v.edit
+GRASS:v.extract --> v.extract
+GRASS:v.extrude --> v.extrude
+GRASS:v.generalize --> v.generalize
+GRASS:v.hull --> v.hull
+GRASS:v.in.ascii --> v.in.ascii
+GRASS:v.in.dxf --> v.in.dxf
+GRASS:v.in.e00 --> v.in.e00
+GRASS:v.in.geonames --> v.in.geonames
+GRASS:v.in.lidar --> v.in.lidar
+GRASS:v.in.lines --> v.in.lines
+GRASS:v.in.mapgen --> v.in.mapgen
+GRASS:v.in.wfs --> v.in.wfs
+GRASS:v.info --> v.info
+GRASS:v.kcv --> v.kcv
+GRASS:v.kernel.rast --> v.kernel.rast
+GRASS:v.kernel.vector --> v.kernel.vector
+GRASS:v.lidar.correction --> v.lidar.correction
+GRASS:v.lidar.edgedetection --> v.lidar.edgedetection
+GRASS:v.lidar.growing --> v.lidar.growing
+GRASS:v.mkgrid --> v.mkgrid
+GRASS:v.neighbors --> v.neighbors
+GRASS:v.net --> v.net
+GRASS:v.net.alloc --> v.net.alloc
+GRASS:v.net.allpairs --> v.net.allpairs
+GRASS:v.net.bridge --> v.net.bridge
+GRASS:v.net.centrality --> v.net.centrality
+GRASS:v.net.components --> v.net.components
+GRASS:v.net.connectivity --> v.net.connectivity
+GRASS:v.net.distance --> v.net.distance
+GRASS:v.net.flow --> v.net.flow
+GRASS:v.net.iso --> v.net.iso
+GRASS:v.net.nreport --> v.net.nreport
+GRASS:v.net.path --> v.net.path
+GRASS:v.net.report --> v.net.report
+GRASS:v.net.salesman --> v.net.salesman
+GRASS:v.net.spanningtree --> v.net.spanningtree
+GRASS:v.net.steiner --> v.net.steiner
+GRASS:v.net.timetable --> v.net.timetable
+GRASS:v.net.visibility --> v.net.visibility
+GRASS:v.normal --> v.normal
+GRASS:v.out.ascii --> v.out.ascii
+GRASS:v.out.dxf --> v.out.dxf
+GRASS:v.out.postgis --> v.out.postgis
+GRASS:v.out.pov --> v.out.pov
+GRASS:v.out.svg --> v.out.svg
+GRASS:v.out.vtk --> v.out.vtk
+GRASS:v.outlier --> v.outlier
+GRASS:v.overlay --> v.overlay
+GRASS:v.pack --> v.pack
+GRASS:v.parallel --> v.parallel
+GRASS:v.patch --> v.patch
+GRASS:v.perturb --> v.perturb
+GRASS:v.proj --> v.proj
+GRASS:v.qcount --> v.qcount
+GRASS:v.random --> v.random
+GRASS:v.rast.stats --> v.rast.stats
+GRASS:v.reclass --> v.reclass
+GRASS:v.rectify --> v.rectify
+GRASS:v.report --> v.report
+GRASS:v.sample --> v.sample
+GRASS:v.segment --> v.segment
+GRASS:v.select --> v.select
+GRASS:v.split --> v.split
+GRASS:v.surf.bspline --> v.surf.bspline
+GRASS:v.surf.idw --> v.surf.idw
+GRASS:v.surf.rst --> v.surf.rst
+GRASS:v.surf.rst.cvdev --> v.surf.rst.cvdev
+GRASS:v.to.3d --> v.to.3d
+GRASS:v.to.lines --> v.to.lines
+GRASS:v.to.points --> v.to.points
+GRASS:v.to.rast --> v.to.rast
+GRASS:v.transform --> v.transform
+GRASS:v.type --> v.type
+GRASS:v.univar --> v.univar
+GRASS:v.vect.stats --> v.vect.stats
+GRASS:v.voronoi --> v.voronoi
+GRASS:v.voronoi.skeleton --> v.voronoi.skeleton
+GRASS:v.what.rast --> v.what.rast
+GRASS:v.what.vect --> v.what.vect
+QGIS:addfieldtoattributestable --> Add field to attributes table
+QGIS:advancedpythonfieldcalculator --> Advanced Python field calculator
+QGIS:aggregate --> Aggregate
+QGIS:aspect --> Aspect
+QGIS:barplot --> Bar plot
+QGIS:basicstatisticsforfields --> Basic statistics for fields
+QGIS:boxplot --> Box plot
+QGIS:buildvirtualvector --> Build virtual vector
+QGIS:checkvalidity --> Check validity
+QGIS:climbalongline --> Climb Along Line
+QGIS:concavehull --> Concave hull (alpha shapes)
+QGIS:convertgeometrytype --> Convert geometry type
+QGIS:countpointsinpolygon --> Count points in polygon
+QGIS:createattributeindex --> Create attribute index
+QGIS:createconstantrasterlayer --> Create constant raster layer
+QGIS:createpointslayerfromtable --> Create points layer from table
+QGIS:createspatialindex --> Create spatial index
+QGIS:definecurrentprojection --> Define layer projection
+QGIS:delaunaytriangulation --> Delaunay triangulation
+QGIS:deletecolumn --> Drop field(s)
+QGIS:deleteduplicategeometries --> Delete duplicate geometries
+QGIS:densifygeometries --> Densify by count
+QGIS:distancematrix --> Distance matrix
+QGIS:distancetonearesthublinetohub --> Distance to nearest hub (line to hub)
+QGIS:distancetonearesthubpoints --> Distance to nearest hub (points)
+QGIS:eliminateselectedpolygons --> Eliminate selected polygons
+QGIS:executesql --> Execute SQL
+QGIS:exportaddgeometrycolumns --> Add geometry attributes
+QGIS:extractspecificvertices --> Extract specific vertices
+QGIS:fieldcalculator --> Field calculator
+QGIS:findprojection --> Find projection
+QGIS:generatepointspixelcentroidsalongline --> Generate points (pixel centroids) along line
+QGIS:generatepointspixelcentroidsinsidepolygons --> Generate points (pixel centroids) inside polygons
+QGIS:geometrybyexpression --> Geometry by expression
+QGIS:heatmapkerneldensityestimation --> Heatmap (Kernel Density Estimation)
+QGIS:hillshade --> Hillshade
+QGIS:hypsometriccurves --> Hypsometric curves
+QGIS:idwinterpolation --> IDW interpolation
+QGIS:importintopostgis --> Export to PostgreSQL
+QGIS:importintospatialite --> Export to SpatiaLite
+QGIS:joinattributesbylocation --> Join attributes by location
+QGIS:joinbylocationsummary --> Join attributes by location (summary)
+QGIS:keepnbiggestparts --> Keep N biggest parts
+QGIS:knearestconcavehull --> Concave hull (k-nearest neighbor)
+QGIS:linestopolygons --> Lines to polygons
+QGIS:listuniquevalues --> List unique values
+QGIS:meanandstandarddeviationplot --> Mean and standard deviation plot
+QGIS:minimumboundinggeometry --> Minimum bounding geometry
+QGIS:nearestneighbouranalysis --> Nearest neighbour analysis
+QGIS:orthogonalize --> Orthogonalize
+QGIS:pointsdisplacement --> Points displacement
+QGIS:pointstopath --> Points to path
+QGIS:polarplot --> Polar plot
+QGIS:poleofinaccessibility --> Pole of inaccessibility
+QGIS:polygonfromlayerextent --> Extract layer extent
+QGIS:polygonize --> Polygonize
+QGIS:postgisexecuteandloadsql --> PostgreSQL execute and load SQL
+QGIS:postgisexecutesql --> PostgreSQL execute SQL
+QGIS:randomextract --> Random extract
+QGIS:randomextractwithinsubsets --> Random extract within subsets
+QGIS:randompointsalongline --> Random points along line
+QGIS:randompointsinextent --> Random points in extent
+QGIS:randompointsinlayerbounds --> Random points in layer bounds
+QGIS:randompointsinsidepolygons --> Random points inside polygons
+QGIS:randomselection --> Random selection
+QGIS:randomselectionwithinsubsets --> Random selection within subsets
+QGIS:rastercalculator --> Raster calculator
+QGIS:rasterize --> Convert map to raster
+QGIS:rasterlayerhistogram --> Raster layer histogram
+QGIS:rasterlayerstatistics --> Raster layer statistics
+QGIS:rastersampling --> Sample raster values
+QGIS:rectanglesovalsdiamondsfixed --> Rectangles, ovals, diamonds (fixed)
+QGIS:rectanglesovalsdiamondsvariable --> Rectangles, ovals, diamonds (variable)
+QGIS:refactorfields --> Refactor fields
+QGIS:regularpoints --> Regular points
+QGIS:relief --> Relief
+QGIS:ruggednessindex --> Ruggedness index
+QGIS:scatter3dplot --> Vector layer scatterplot 3D
+QGIS:selectbyattribute --> Select by attribute
+QGIS:selectbyexpression --> Select by expression
+QGIS:serviceareafromlayer --> Service area (from layer)
+QGIS:serviceareafrompoint --> Service area (from point)
+QGIS:setmvalue --> Set M value
+QGIS:setstyleforrasterlayer --> Set style for raster layer
+QGIS:setstyleforvectorlayer --> Set style for vector layer
+QGIS:setzvalue --> Set Z value
+QGIS:singlesidedbuffer --> Single sided buffer
+QGIS:slope --> Slope
+QGIS:snapgeometries --> Snap geometries to layer
+QGIS:spatialiteexecutesql --> SpatiaLite execute SQL
+QGIS:splitvectorlayer --> Split vector layer
+QGIS:statisticsbycategories --> Statistics by categories
+QGIS:sumlinelengths --> Sum line lengths
+QGIS:texttofloat --> Text to float
+QGIS:tilesxyzdirectory --> Generate XYZ tiles (Directory)
+QGIS:tilesxyzmbtiles --> Generate XYZ tiles (MBTiles)
+QGIS:tininterpolation --> TIN interpolation
+QGIS:topologicalcoloring --> Topological coloring
+QGIS:truncatetable --> Truncate table
+QGIS:variabledistancebuffer --> Variable distance buffer
+QGIS:vectorlayerhistogram --> Vector layer histogram
+QGIS:vectorlayerscatterplot --> Vector layer scatterplot
+QGIS:voronoipolygons --> Voronoi polygons
+QGIS:zonalstatistics --> Zonal statistics
+SAGA:accumulatedcost --> Accumulated cost
+SAGA:accumulatedcostanisotropic --> Accumulated cost (anisotropic)
+SAGA:accumulatedcostisotropic --> Accumulated cost (isotropic)
+SAGA:accumulationfunctions --> Accumulation functions
+SAGA:addcoordinatestopoints --> Add coordinates to points
+SAGA:addindicatorfieldsforcategories --> Add indicator fields for categories
+SAGA:addpointattributestopolygons --> Add point attributes to polygons
+SAGA:addpolygonattributestopoints --> Add polygon attributes to points
+SAGA:addrastervaluestofeatures --> Add raster values to features
+SAGA:addrastervaluestopoints --> Add raster values to points
+SAGA:aggregate --> Aggregate
+SAGA:aggregatepointobservations --> Aggregate point observations
+SAGA:aggregationindex --> Aggregation index
+SAGA:analyticalhierarchyprocess --> Analytical hierarchy process
+SAGA:analyticalhillshading --> Analytical hillshading
+SAGA:angmap --> Angmap
+SAGA:angulardistanceweighted --> Angular distance weighted
+SAGA:artificialneuralnetworkclassificationopencv --> Artificial neural network classification (opencv)
+SAGA:aspectslopegrid --> Aspect-slope grid
+SAGA:automatedcloudcoverassessment --> Automated cloud cover assessment
+SAGA:averagewithmask1 --> Average with mask 1
+SAGA:averagewithmask2 --> Average with mask 2
+SAGA:averagewiththereshold1 --> Average with thereshold 1
+SAGA:averagewiththereshold2 --> Average with thereshold 2
+SAGA:averagewiththereshold3 --> Average with thereshold 3
+SAGA:basicterrainanalysis --> Basic terrain analysis
+SAGA:binaryerosionreconstruction --> Binary erosion-reconstruction
+SAGA:bioclimaticvariables --> Bioclimatic variables
+SAGA:boostingclassificationopencv --> Boosting classification (opencv)
+SAGA:bsplineapproximation --> B-spline approximation
+SAGA:burnstreamnetworkintodem --> Burn stream network into dem
+SAGA:catchmentarea --> Catchment area
+SAGA:catchmentareaflowtracing --> Catchment area (flow tracing)
+SAGA:catchmentarearecursive --> Catchment area (recursive)
+SAGA:categoricalcoincidence --> Categorical coincidence
+SAGA:cellbalance --> Cell balance
+SAGA:changedatastorage --> Change data storage
+SAGA:changedateformat --> Change date format
+SAGA:changedetection --> Change detection
+SAGA:changetimeformat --> Change time format
+SAGA:channelnetwork --> Channel network
+SAGA:channelnetworkanddrainagebasins --> Channel network and drainage basins
+SAGA:clippointswithpolygons --> Clip points with polygons
+SAGA:cliprasterwithpolygon --> Clip raster with polygon
+SAGA:closegaps --> Close gaps
+SAGA:closegapswithspline --> Close gaps with spline
+SAGA:closegapswithstepwiseresampling --> Close gaps with stepwise resampling
+SAGA:closeonecellgaps --> Close one cell gaps
+SAGA:clusteranalysis --> Cluster analysis
+SAGA:clusteranalysisshapes --> Cluster analysis (shapes)
+SAGA:concentration --> Concentration
+SAGA:confusionmatrixpolygonsgrid --> Confusion matrix (polygons / grid)
+SAGA:confusionmatrixtwogrids --> Confusion matrix (two grids)
+SAGA:connectivityanalysis --> Connectivity analysis
+SAGA:constantgrid --> Constant grid
+SAGA:contourlines --> Contour lines
+SAGA:convergenceindex --> Convergence index
+SAGA:convergenceindexsearchradius --> Convergence index (search radius)
+SAGA:convertdatastoragetype --> Convert data storage type
+SAGA:convertlinestopoints --> Convert lines to points
+SAGA:convertlinestopolygons --> Convert lines to polygons
+SAGA:convertmultipointstopoints --> Convert multipoints to points
+SAGA:convertpointstolines --> Convert points to line(s)
+SAGA:convertpolygonlineverticestopoints --> Convert polygon/line vertices to points
+SAGA:convertpolygonstolines --> Convert polygons to lines
+SAGA:convexhull --> Convex hull
+SAGA:covereddistance --> Covered distance
+SAGA:createlinesgraticule --> Create lines graticule
+SAGA:createpointgrid --> Create point grid
+SAGA:createpolygonsgraticule --> Create polygons graticule
+SAGA:croptodata --> Crop to data
+SAGA:crossclassificationandtabulation --> Cross-classification and tabulation
+SAGA:crossprofiles --> Cross profiles
+SAGA:curvatureclassification --> Curvature classification
+SAGA:cutvectorlayer --> Cut vector layer
+SAGA:decisiontreeclassificationopencv --> Decision tree classification (opencv)
+SAGA:destriping --> Destriping
+SAGA:destripingwithmask --> Destriping with mask
+SAGA:difference --> Difference
+SAGA:diffusepollutionrisk --> Diffuse pollution risk
+SAGA:diffusivehillslopeevolutionadi --> Diffusive hillslope evolution (adi)
+SAGA:diffusivehillslopeevolutionftcs --> Diffusive hillslope evolution (ftcs)
+SAGA:directionalaverage --> Directional average
+SAGA:directionalstatisticsforrasterlayer --> Directional statistics for raster layer
+SAGA:distancevigra --> Distance (vigra)
+SAGA:diurnalanisotropicheating --> Diurnal anisotropic heating
+SAGA:diversityofcategories --> Diversity of categories
+SAGA:downslopedistancegradient --> Downslope distance gradient
+SAGA:dtmfilterslopebased --> Dtm filter (slope-based)
+SAGA:earthsorbitalparameters --> Earth's orbital parameters
+SAGA:edgecontamination --> Edge contamination
+SAGA:edgedetectionvigra --> Edge detection (vigra)
+SAGA:effectiveairflowheights --> Effective air flow heights
+SAGA:enhancedvegetationindex --> Enhanced vegetation index
+SAGA:enumeratetablefield --> Enumerate table field
+SAGA:fastregiongrowingalgorithm --> Fast region growing algorithm
+SAGA:fastrepresentativeness --> Fast representativeness
+SAGA:featureextents --> Feature extents
+SAGA:fieldstatistics --> Field statistics
+SAGA:fillgapsinrecords --> Fill gaps in records
+SAGA:fillsinks --> Fill sinks
+SAGA:fillsinksqmofesp --> Fill sinks (qm of esp)
+SAGA:fillsinkswangliu --> Fill sinks (wang & liu)
+SAGA:fillsinksxxlwangliu --> Fill sinks xxl (wang & liu)
+SAGA:findfieldofextremevalue --> Find field of extreme value
+SAGA:fireriskanalysis --> Fire risk analysis
+SAGA:fitnpointsinpolygon --> Fit n points in polygon
+SAGA:fixeddistancebuffer --> Fixed distance buffer
+SAGA:flatdetection --> Flat detection
+SAGA:flattenpolygonlayer --> Flatten polygon layer
+SAGA:flowaccumulationqmofesp --> Flow accumulation (qm of esp)
+SAGA:flowpathlength --> Flow path length
+SAGA:flowwidthandspecificcatchmentarea --> Flow width and specific catchment area
+SAGA:fourierfiltervigra --> Fourier filter (vigra)
+SAGA:fouriertransformationopencv --> Fourier transformation (opencv)
+SAGA:fouriertransforminversevigra --> Fourier transform inverse (vigra)
+SAGA:fouriertransformrealvigra --> Fourier transform (real, vigra)
+SAGA:fouriertransformvigra --> Fourier transform (vigra)
+SAGA:fragmentationalternative --> Fragmentation (alternative)
+SAGA:fragmentationclassesfromdensityandconnectivity --> Fragmentation classes from density and connectivity
+SAGA:fragmentationstandard --> Fragmentation (standard)
+SAGA:function --> Function
+SAGA:functionfit --> Function fit
+SAGA:fuzzify --> Fuzzify
+SAGA:fuzzyintersectionand --> Fuzzy intersection (and)
+SAGA:fuzzylandformelementclassification --> Fuzzy landform element classification
+SAGA:fuzzyunionor --> Fuzzy union (or)
+SAGA:gaussianfilter --> Gaussian filter
+SAGA:generateshapes --> Generate shapes
+SAGA:geodesicmorphologicalreconstruction --> Geodesic morphological reconstruction
+SAGA:geographiccoordinategrids --> Geographic coordinate grids
+SAGA:geometricfigures --> Geometric figures
+SAGA:globalmoransiforrasterlayer --> Global moran's i for raster layer
+SAGA:gradientvectorfromcartesiantopolarcoordinates --> Gradient vector from cartesian to polar coordinates
+SAGA:gradientvectorfrompolartocartesiancoordinates --> Gradient vector from polar to cartesian coordinates
+SAGA:gradientvectorsfromdirectionalcomponents --> Gradient vectors from directional components
+SAGA:gradientvectorsfromdirectionandlength --> Gradient vectors from direction and length
+SAGA:gradientvectorsfromsurface --> Gradient vectors from surface
+SAGA:gridcombination --> Gridcombination
+SAGA:gridstatisticsforpoints --> Grid statistics for points
+SAGA:gwrformultiplepredictorlayers --> Gwr for multiple predictor layers
+SAGA:gwrformultiplepredictors --> Gwr for multiple predictors
+SAGA:gwrformultiplepredictorsgriddedmodeloutput --> Gwr for multiple predictors (gridded model output)
+SAGA:gwrforsinglepredictorgriddedmodeloutput --> Gwr for single predictor (gridded model output)
+SAGA:gwrforsinglepredictorlayer --> Gwr for single predictor layer
+SAGA:histogramsurface --> Histogram surface
+SAGA:hypsometry --> Hypsometry
+SAGA:imcorrfeaturetracking --> Imcorr - feature tracking
+SAGA:interpolatecubicspline --> Interpolate (cubic spline)
+SAGA:intersect --> Intersect
+SAGA:inversedistanceweightedinterpolation --> Inverse distance weighted interpolation
+SAGA:invertdatanodata --> Invert data/no-data
+SAGA:invertgrid --> Invert grid
+SAGA:isodataclusteringforgrids --> Isodata clustering for grids
+SAGA:kerneldensityestimation --> Kernel density estimation
+SAGA:kmeansclusteringforgrids --> K-means clustering for grids
+SAGA:knearestneighboursclassificationopencv --> K-nearest neighbours classification (opencv)
+SAGA:lakeflood --> Lake flood
+SAGA:landsurfacetemperature --> Land surface temperature
+SAGA:landusescenariogenerator --> Land use scenario generator
+SAGA:laplacianfilter --> Laplacian filter
+SAGA:layerofextremevalue --> Layer of extreme value
+SAGA:leastcostpaths --> Least cost paths
+SAGA:linedissolve --> Line dissolve
+SAGA:linepolygonintersection --> Line-polygon intersection
+SAGA:lineproperties --> Line properties
+SAGA:linesimplification --> Line simplification
+SAGA:linesmoothing --> Line smoothing
+SAGA:localminimaandmaxima --> Local minima and maxima
+SAGA:lsfactor --> Ls factor
+SAGA:lsfactorfieldbased --> Ls-factor, field based
+SAGA:majorityfilter --> Majority filter
+SAGA:massbalanceindex --> Mass balance index
+SAGA:maximumentropypresenceprediction --> Maximum entropy presence prediction
+SAGA:maximumflowpathlength --> Maximum flow path length
+SAGA:mergevectorlayers --> Merge vector layers
+SAGA:meshdenoise --> Mesh denoise
+SAGA:metricconversions --> Metric conversions
+SAGA:minimumdistanceanalysis --> Minimum distance analysis
+SAGA:mirrorgrid --> Mirror grid
+SAGA:modifedquadraticshepard --> Modifed quadratic shepard
+SAGA:modifiedquadraticshepardinterpolation --> Modified quadratic shepard interpolation
+SAGA:monthlyglobalbylatitude --> Monthly global by latitude
+SAGA:morphologicalfilter --> Morphological filter
+SAGA:morphologicalfilteropencv --> Morphological filter (opencv)
+SAGA:morphologicalfiltervigra --> Morphological filter (vigra)
+SAGA:morphometricfeatures --> Morphometric features
+SAGA:morphometricprotectionindex --> Morphometric protection index
+SAGA:mosaicrasterlayers --> Mosaic raster layers
+SAGA:multibandvariation --> Multi-band variation
+SAGA:multidirectionleefilter --> Multi direction lee filter
+SAGA:multilevelbsplineinterpolation --> Multilevel b-spline interpolation
+SAGA:multilevelbsplineinterpolationforcategories --> Multilevel b-spline interpolation for categories
+SAGA:multilevelbsplineinterpolationfromraster --> Multilevel b-spline interpolation (from raster)
+SAGA:multiplelinearregressionanalysis --> Multiple linear regression analysis
+SAGA:multiplelinearregressionanalysisshapes --> Multiple linear regression analysis (shapes)
+SAGA:multipleregressionanalysisgridandpredictorgrids --> Multiple regression analysis (grid and predictor grids)
+SAGA:multipleregressionanalysispointsandpredictorgrids --> Multiple regression analysis (points and predictor grids)
+SAGA:multipleregressionanalysispointsraster --> Multiple regression analysis (points/raster)
+SAGA:multipleregressionanalysisrasterraster --> Multiple regression analysis (raster/raster)
+SAGA:multiresolutionindexofvalleybottomflatnessmrvbf --> Multiresolution index of valley bottom flatness (mrvbf)
+SAGA:naturalneighbour --> Natural neighbour
+SAGA:nearestneighbour --> Nearest neighbour
+SAGA:normalbayesclassificationopencv --> Normal bayes classification (opencv)
+SAGA:orderedweightedaveraging --> Ordered weighted averaging
+SAGA:ordinarykriging --> Ordinary kriging
+SAGA:overlandflowdistancetochannelnetwork --> Overland flow distance to channel network
+SAGA:overlandflowkinematicwaved8 --> Overland flow - kinematic wave d8
+SAGA:paramemeltonruggednessnumber --> Paramemelton ruggedness number
+SAGA:patching --> Patching
+SAGA:patternanalysis --> Pattern analysis
+SAGA:petafterhargreavesgrid --> Pet (after hargreaves, grid)
+SAGA:petafterhargreavestable --> Pet (after hargreaves, table)
+SAGA:pointdistances --> Point distances
+SAGA:pointsfilter --> Points filter
+SAGA:pointstatisticsforpolygons --> Point statistics for polygons
+SAGA:pointsthinning --> Points thinning
+SAGA:polartocartesiancoordinates --> Polar to cartesian coordinates
+SAGA:polygoncentroids --> Polygon centroids
+SAGA:polygonclipping --> Polygon clipping
+SAGA:polygondissolveallpolygons --> Polygon dissolve (all polygons)
+SAGA:polygondissolvebyattribute --> Polygon dissolve (by attribute)
+SAGA:polygonidentity --> Polygon identity
+SAGA:polygonlineintersection --> Polygon-line intersection
+SAGA:polygonpartstoseparatepolygons --> Polygon parts to separate polygons
+SAGA:polygonproperties --> Polygon properties
+SAGA:polygonselfintersection --> Polygon self-intersection
+SAGA:polygonshapeindices --> Polygon shape indices
+SAGA:polygonstoedgesandnodes --> Polygons to edges and nodes
+SAGA:polygonunion --> Polygon union
+SAGA:polygonupdate --> Polygon update
+SAGA:polynomialregression --> Polynomial regression
+SAGA:principlecomponentsanalysis --> Principle components analysis
+SAGA:profilefrompointstable --> Profile from points table
+SAGA:profilesfromlines --> Profiles from lines
+SAGA:proximityraster --> Proximity raster
+SAGA:quadtreestructuretopolygons --> Quadtree structure to polygons
+SAGA:radiusofvarianceraster --> Radius of variance (raster)
+SAGA:randomfield --> Random field
+SAGA:randomforestclassificationopencv --> Random forest classification (opencv)
+SAGA:randomforestpresencepredictionvigra --> Random forest presence prediction (vigra)
+SAGA:randomterraingeneration --> Random terrain generation
+SAGA:rankfilter --> Rank filter
+SAGA:rasterbuffer --> Raster buffer
+SAGA:rastercalculator --> Raster calculator
+SAGA:rastercellindex --> Raster cell index
+SAGA:rasterdifference --> Raster difference
+SAGA:rasterdivision --> Raster division
+SAGA:rasterize --> Rasterize
+SAGA:rastermasking --> Raster masking
+SAGA:rasternormalisation --> Raster normalisation
+SAGA:rasterorientation --> Raster orientation
+SAGA:rasterproduct --> Raster product
+SAGA:rasterproximitybuffer --> Raster proximity buffer
+SAGA:rasterskeletonization --> Raster skeletonization
+SAGA:rasterssum --> Rasters sum
+SAGA:rasterstandardisation --> Raster standardisation
+SAGA:rasterstatisticsforpolygons --> Raster statistics for polygons
+SAGA:rastervaluestopoints --> Raster values to points
+SAGA:rastervaluestopointsrandomly --> Raster values to points (randomly)
+SAGA:rastervolume --> Raster volume
+SAGA:realsurfacearea --> Real surface area
+SAGA:reclassifyvalues --> Reclassify values
+SAGA:reclassifyvaluessimple --> Reclassify values (simple)
+SAGA:regressionanalysis --> Regression analysis
+SAGA:regressionanalysispointsandpredictorgrid --> Regression analysis (points and predictor grid)
+SAGA:regressionkriging --> Regression kriging
+SAGA:relativeheightsandslopepositions --> Relative heights and slope positions
+SAGA:removeduplicatepoints --> Remove duplicate points
+SAGA:removesmallpixelclumpstonodata --> Remove small pixel clumps (to no-data)
+SAGA:representativeness --> Representativeness
+SAGA:resampling --> Resampling
+SAGA:resamplingfilter --> Resampling filter
+SAGA:residualanalysis --> Residual analysis
+SAGA:rgbcomposite --> Rgb composite
+SAGA:riverbasin --> Riverbasin
+SAGA:rivergridgeneration --> Rivergridgeneration
+SAGA:runningaverage --> Running average
+SAGA:sagawetnessindex --> Saga wetness index
+SAGA:seededregiongrowing --> Seeded region growing
+SAGA:seedgeneration --> Seed generation
+SAGA:separatepointsbydirection --> Separate points by direction
+SAGA:sharedpolygonedges --> Shared polygon edges
+SAGA:shrinkandexpand --> Shrink and expand
+SAGA:sievingclasses --> Sieving classes
+SAGA:simplefilter --> Simple filter
+SAGA:simplefilterwithinshapes --> Simple filter within shapes
+SAGA:simplekriging --> Simple kriging
+SAGA:simpleregiongrowing --> Simple region growing
+SAGA:simulation --> Simulation
+SAGA:singlevaluedecompositionopencv --> Single value decomposition (opencv)
+SAGA:sinkdrainageroutedetection --> Sink drainage route detection
+SAGA:sinkremoval --> Sink removal
+SAGA:skyviewfactor --> Sky view factor
+SAGA:slopeaspectcurvature --> Slope, aspect, curvature
+SAGA:slopelength --> Slope length
+SAGA:slopelimitedflowaccumulation --> Slope limited flow accumulation
+SAGA:smoothingvigra --> Smoothing (vigra)
+SAGA:snappointstogrid --> Snap points to grid
+SAGA:snappointstolines --> Snap points to lines
+SAGA:snappointstopoints --> Snap points to points
+SAGA:soiltextureclassification --> Soil texture classification
+SAGA:spatialpointpatternanalysis --> Spatial point pattern analysis
+SAGA:splitlinesatpoints --> Split lines at points
+SAGA:splitlineswithlines --> Split lines with lines
+SAGA:splitrgbbands --> Split RGB bands
+SAGA:splitshapeslayerrandomly --> Split shapes layer randomly
+SAGA:statisticsforrasters --> Statistics for rasters
+SAGA:strahlerorder --> Strahler order
+SAGA:streampowerindex --> Stream power index
+SAGA:successiveflowrouting --> Successive flow routing
+SAGA:supervisedclassification --> Supervised classification
+SAGA:supervisedclassificationforgrids --> Supervised classification for grids
+SAGA:supervisedclassificationforshapes --> Supervised classification for shapes
+SAGA:supportvectormachineclassificationopencv --> Support vector machine classification (opencv)
+SAGA:surfaceandgradient --> Surface and gradient
+SAGA:surfacegradientandconcentration --> Surface, gradient and concentration
+SAGA:surfacespecificpoints --> Surface specific points
+SAGA:svmclassification --> Svm classification
+SAGA:symmetricaldifference --> Symmetrical difference
+SAGA:tasseledcaptransformation --> Tasseled cap transformation
+SAGA:tcilow --> Tci low
+SAGA:terrainmapview --> Terrain map view
+SAGA:terrainruggednessindextri --> Terrain ruggedness index (tri)
+SAGA:terrainsurfaceclassificationiwahashiandpike --> Terrain surface classification (iwahashi and pike)
+SAGA:terrainsurfaceconvexity --> Terrain surface convexity
+SAGA:terrainsurfacetexture --> Terrain surface texture
+SAGA:thiessenpolygons --> Thiessen polygons
+SAGA:thinplatespline --> Thin plate spline
+SAGA:thinplatesplinetin --> Thin plate spline (tin)
+SAGA:thresholdrasterbuffer --> Threshold raster buffer
+SAGA:topofatmospherereflectance --> Top of atmosphere reflectance
+SAGA:topographiccorrection --> Topographic correction
+SAGA:topographicopenness --> Topographic openness
+SAGA:topographicpositionindextpi --> Topographic position index (tpi)
+SAGA:topographicwetnessindextwi --> Topographic wetness index (twi)
+SAGA:tpibasedlandformclassification --> Tpi based landform classification
+SAGA:transectthroughpolygonshapefile --> Transect through polygon shapefile
+SAGA:transformvectorlayer --> Transform vector layer
+SAGA:transposerasterlayers --> Transpose raster layers
+SAGA:triangulation --> Triangulation
+SAGA:universalkriging --> Universal kriging
+SAGA:upslopeanddownslopecurvature --> Upslope and downslope curvature
+SAGA:upslopearea --> Upslope area
+SAGA:userdefinedfilter --> User defined filter
+SAGA:valleyandridgedetectiontophatapproach --> Valley and ridge detection (top hat approach)
+SAGA:valleydepth --> Valley depth
+SAGA:variabledistancebuffer --> Variable distance buffer
+SAGA:variogramcloud --> Variogram cloud
+SAGA:variogramsurface --> Variogram surface
+SAGA:vectorisinggridclasses --> Vectorising grid classes
+SAGA:vectorruggednessmeasurevrm --> Vector ruggedness measure (vrm)
+SAGA:vegetationindexdistancebased --> Vegetation index (distance based)
+SAGA:vegetationindexslopebased --> Vegetation index (slope based)
+SAGA:verticaldistancetochannelnetwork --> Vertical distance to channel network
+SAGA:warpingshapes --> Warping shapes
+SAGA:waterretentioncapacity --> Water retention capacity
+SAGA:watershedbasins --> Watershed basins
+SAGA:watershedsegmentation --> Watershed segmentation
+SAGA:watershedsegmentationvigra --> Watershed segmentation (vigra)
+SAGA:windeffect --> Wind effect
+SAGA:windexpositionindex --> Wind exposition index
+SAGA:zonalmultipleregressionanalysispointsandpredictorgrids --> Zonal multiple regression analysis (points and predictor grids)
+SAGA:zonalrasterstatistics --> Zonal raster statistics
+
+Process finished with exit code 0
+
