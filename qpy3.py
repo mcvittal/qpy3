@@ -19,7 +19,10 @@ from processing.core.Processing import Processing
 import processing
 Processing.initialize()
 
-A = Analysis(processing, Processing)
+class Qpy(Analysis):
+    pass
+
+Qpy = Qpy(processing, Processing)
 
 
 def list_all_algorithms():
