@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-## The new home for qpy - qpy3. The old qpy is slated for removal and will be replaced with this
-## class.
+## Main class that handles imports of all sub-classes. 
 
 ## Written 12/12/2019 by @mcvittal
 
