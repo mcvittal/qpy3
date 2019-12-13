@@ -13,3 +13,7 @@ try:
     print("Buffering succeeded")
 except Exception:
     traceback.print_exc(file=sys.stdout)
+    
+    
+print("Testing completed. Closing QGIS object")
+Qpy.close()
