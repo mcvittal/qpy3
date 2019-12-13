@@ -6,6 +6,7 @@
 ## Written 12/12/2019 by @mcvittal
 
 from modules.Analysis import Analysis
+from modules.License import LicenseManager
 from xvfbwrapper import Xvfb
 import sys
 from qgis.core import QgsApplication, QgsVectorLayer
@@ -32,7 +33,7 @@ from processing.core.Processing import Processing
 import processing
 Processing.initialize()
 
-class Qpy(Analysis):
+class Qpy(Analysis, LicenseManager):
     pass
 
 Qpy = Qpy(processing, Processing)
