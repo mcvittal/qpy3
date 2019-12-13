@@ -5,7 +5,7 @@
 
 ## Written 12/12/2019 by @mcvittal
 
-from modules2.Analysis import Analysis
+from modules.Analysis import Analysis
 
 import sys
 from qgis.core import QgsApplication, QgsVectorLayer
