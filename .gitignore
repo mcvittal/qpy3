@@ -11,3 +11,4 @@ New Text Document.txt
 *.db
 test.py
 *.swp
+venv/

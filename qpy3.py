@@ -3,29 +3,34 @@
 ## Main class that handles imports of all sub-classes. 
 
 ## Written 12/12/2019 by @mcvittal
+from modules.SetPaths import SetPaths
+setPaths = SetPaths()
+
 
 from modules.Analysis import Analysis
 from modules.License import LicenseManager
-from xvfbwrapper import Xvfb
+
+
 import sys
 from qgis.core import QgsApplication, QgsVectorLayer
 
 
 gui_flag = False
 
-# For headless servers - fake x server so dummy QGIS instance can run 
-vdisplay = Xvfb()
-vdisplay.start()
+# For headless servers - fake x server so dummy QGIS instance can run
+if not setPaths.isWindows():
+    from xvfbwrapper import Xvfb
+    vdisplay = Xvfb()
+    vdisplay.start()
 
 #Create dummy instance 
 app = QgsApplication([], gui_flag)
 
-# Instantiate the dummy instance 
-QgsApplication.setPrefixPath("/usr", True)
+# Instantiate the dummy instance
+QgsApplication.setPrefixPath(setPaths.get_qgisprefix(), True)
 QgsApplication.initQgis()
 
-# Add the processing plugin to the python path 
-sys.path.append('/usr/share/qgis/python/plugins')
+
 
 # Load processing package
 from processing.core.Processing import Processing
