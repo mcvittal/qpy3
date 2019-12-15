@@ -76,6 +76,20 @@ class SetPaths:
                      'C:\\OSGEO4W64\\apps\\Python37\\lib\\site-packages\\win32',
                      'C:\\OSGEO4W64\\apps\\Python37\\lib\\site-packages\\win32\\lib',
                      'C:\\OSGEO4W64\\apps\\Python37\\lib\\site-packages\\Pythonwin',
+                     'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python', 
+                     'C:/PROGRA~1/QGIS3~1.10/apps/qgis/./python', 
+                     'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python', 
+                     'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python/plugins', 
+                     'C:/PROGRA~1/QGIS3~1.10/apps/qgis/./python/plugins', 
+                     'C:\\Program Files\\QGIS 3.10\\bin\\python37.zip', 
+                     'C:\\PROGRA~1\\QGIS3~1.10\\apps\\Python37\\DLLs', 
+                     'C:\\PROGRA~1\\QGIS3~1.10\\apps\\Python37\\lib', 
+                     'C:\\Program Files\\QGIS 3.10\\bin', 'C:\\Users\\USERNAME\\AppData\\Roaming\\Python\\Python37\\site-packages', 
+                     'C:\\PROGRA~1\\QGIS3~1.10\\apps\\Python37', 
+                     'C:\\PROGRA~1\\QGIS3~1.10\\apps\\Python37\\lib\\site-packages', 
+                     'C:\\PROGRA~1\\QGIS3~1.10\\apps\\Python37\\lib\\site-packages\\win32', 
+                     'C:\\PROGRA~1\\QGIS3~1.10\\apps\\Python37\\lib\\site-packages\\win32\\lib', 
+                     'C:\\PROGRA~1\\QGIS3~1.10\\apps\\Python37\\lib\\site-packages\\Pythonwin', 
                      'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python']
 
             for path in paths:
