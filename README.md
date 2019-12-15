@@ -8,9 +8,17 @@ I've found that standalone GIS processing to be quite a chore in the open source
 
 # Setup
 
-On Ubuntu, simply run setup.sh. It will install the necessary dependencies. xvfb and xvfbwrapper create a dummy graphical interface for running on a headless environment.
+## Ubuntu
 
-An update to this library to work with Windows is coming soon! Stay tuned. 
+On Ubuntu, simply run setup.sh. It will install the necessary dependencies. xvfb and xvfbwrapper create a dummy graphical interface for running on a headless environment. 
+
+## Windows 
+
+Currently, this library does not support "true" standalone processing in Windows, but rather must be used within the OSGeo4W Python shell. You can invoke your qpy script by calling `python-qgis my_qpy_script.py`  from within the OSGeo4W shell. We simply do not have the resources to make true standalone qpy happen on Windows, but we will gladly accept a pull request that enables this! 
+
+## MacOS
+
+Nobody on the development team currently owns a mac or hackintosh, so we are unable to develop for this operating system. We assume that it would only be a minor change to how it works on Linux. A pull request enabling this feature would be readily accepted. 
 
 # Using the library 
 

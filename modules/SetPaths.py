@@ -65,17 +65,7 @@ class SetPaths:
     # Add the processing plugin to the python path 
     def addToPath(self):
         if self.isWindows():
-            print(self.get_qgisprefix())
-            sys.path.insert(0, self.get_qgisprefix() + '/python/plugins')
-            paths = ['C:/OSGEO4W64/apps/qgis/./python', 'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python', 'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python/plugins', 'C:/OSGEO4W64/apps/qgis/./python/plugins', 'C:\\OSGeo4W64\\bin\\python37.zip', 'C:\\OSGEO4W64\\apps\\Python37\\DLLs', 'C:\\OSGEO4W64\\apps\\Python37\\lib', 'C:\\OSGeo4W64\\bin', 'C:\\OSGEO4W64\\apps\\Python37', 'C:\\OSGEO4W64\\apps\\Python37\\lib\\site-packages', 'C:\\OSGEO4W64\\apps\\Python37\\lib\\site-packages\\win32', 'C:\\OSGEO4W64\\apps\\Python37\\lib\\site-packages\\win32\\lib', 'C:\\OSGEO4W64\\apps\\Python37\\lib\\site-packages\\Pythonwin', 'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python']
-
-
-            for path in paths:
-                path = path.replace("USERNAME", getpass.getuser())
-                if os.path.exists(path):
-                    print("appending " + path)
-                    sys.path.append(path)
-
+            pass # TODO need to implement proper path additions - right now let osgeo4w shell handle that.
         else:
             sys.path.append('/usr/share/qgis/python/plugins')
         
