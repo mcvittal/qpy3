@@ -44,14 +44,14 @@ class Qpy(Analysis, LicenseManager):
         QgsApplication.exit()
 
     # Helpful general functions go here
-    def list_all_algorithms(self):
+    def list_all_algorithms(self, search_str=""):
+        search_str = search_str.lower()
         for alg in QgsApplication.processingRegistry().algorithms():
-            print("{}:{} --> {}".format(alg.provider().name(), alg.name(), alg.displayName()))
+            if search_str in alg.name().lower() or search_str in alg.displayName().lower():
+                print("{}:{} --> {}".format(alg.provider().name(), alg.name(), alg.displayName()))
+
+    def algorithmHelp(self, name):
+        processing.algorithmHelp(name)
+
 
 Qpy = Qpy(processing, Processing)
-
-
-
-
-
-
