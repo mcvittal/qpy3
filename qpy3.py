@@ -43,13 +43,15 @@ class Qpy(Analysis, LicenseManager):
         QgsApplication.exitQgis()
         QgsApplication.exit()
 
+    # Helpful general functions go here
+    def list_all_algorithms(self):
+        for alg in QgsApplication.processingRegistry().algorithms():
+            print("{}:{} --> {}".format(alg.provider().name(), alg.name(), alg.displayName()))
+
 Qpy = Qpy(processing, Processing)
 
 
-# Helpful general functions go here 
-def list_all_algorithms(self):
-    for alg in QgsApplication.processingRegistry().algorithms():
-        print("{}:{} --> {}".format(alg.provider().name(), alg.name(), alg.displayName()))
+
 
 
 
