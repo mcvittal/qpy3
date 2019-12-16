@@ -9,6 +9,7 @@ setPaths = SetPaths()
 
 from modules.Analysis import Analysis
 from modules.License import LicenseManager
+from modules.RasterProcessing import RasterProcessingToolset
 
 
 import sys
@@ -37,7 +38,7 @@ from processing.core.Processing import Processing
 import processing
 Processing.initialize()
 
-class Qpy(Analysis, LicenseManager):
+class Qpy(Analysis, LicenseManager, RasterProcessingToolset):
     def close(self):
         # Exit applications
         QgsApplication.exitQgis()
