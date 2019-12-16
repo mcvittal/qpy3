@@ -1,4 +1,4 @@
-from qgis.core import *
+from qgis.core import QgsVectorLayer
 
 from modules.Vector.Extract import Extract
 
