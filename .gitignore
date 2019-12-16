@@ -12,6 +12,6 @@ New Text Document.txt
 test.py
 *.swp
 venv/
-.idea
+.idea/*
 
 tests/test_output
