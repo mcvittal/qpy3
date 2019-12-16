@@ -1,6 +1,6 @@
 from qgis.core import *
 
-from modules.Extract import Extract
+from modules.Vector.Extract import Extract
 
 # Inherit the Extract subclass of Analysis
 class Analysis(Extract):

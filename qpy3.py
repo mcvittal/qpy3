@@ -3,18 +3,15 @@
 ## Main class that handles imports of all sub-classes. 
 
 ## Written 12/12/2019 by @mcvittal
-from modules.SetPaths import SetPaths
+from modules.Utils.SetPaths import SetPaths
 setPaths = SetPaths()
 
 
-from modules.Analysis import Analysis
-from modules.License import LicenseManager
-from modules.RasterProcessing import RasterProcessingToolset
+from modules.Vector.Analysis import Analysis
+from modules.Utils.License import LicenseManager
+from modules.Raster.RasterProcessing import RasterProcessingToolset
 
-
-import sys
-from qgis.core import QgsApplication, QgsVectorLayer
-
+from qgis.core import QgsApplication
 
 gui_flag = False
 
