@@ -8,8 +8,11 @@ from qpy3 import Qpy
 
 print("Testing buffering")
 
+if not os.path.exists("test_output"):
+    os.mkdir("test_output")
+
 try:
-    Qpy.Buffer("../test_data/point1.shp", "test_output/buffered.shp", 0.5)
+    Qpy.Buffer("test_data/point1.shp", "test_output/buffered.shp", 0.5)
     print("Buffering succeeded")
 except Exception:
     traceback.print_exc(file=sys.stdout)
