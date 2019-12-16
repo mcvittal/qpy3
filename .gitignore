@@ -13,5 +13,8 @@ test.py
 *.swp
 venv/
 .idea/*
+.idea/misc.xml
+.idea/qpy.iml
+
 
 tests/test_output
