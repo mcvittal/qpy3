@@ -1,3 +1,5 @@
+from qgis.core import QgsVectorLayer, QgsExpression, QgsFeatureRequest, QgsVectorFileWriter
+
 class Extract():
     def __init__(self, processing, Processing):
         self.Processing = Processing
@@ -7,9 +9,16 @@ class Extract():
         pass
 
     def Select_analysis(self, in_features, out_feature_class, where_clause=None):
-        pass
+        expr = QgsExpression(where_clause)
+        in_layer = QgsVectorLayer(in_features)
 
-    def Split_analysis(self, in_featuures, split_features, split_field, out_workspace, cluster_tolerance=None):
+        selection = in_layer.getFeatures(QgsFeatureRequest().setFilterExpression(where_clause))
+        in_layer.selectByIds([s.id() for s in selection])
+
+        QgsVectorFileWriter.writeAsVectorFormat(in_layer, out_feature_class,  "utf-8", in_layer.crs(), "ESRI Shapefile", onlySelected=True)
+
+
+    def Split_analysis(self, in_features, split_features, split_field, out_workspace, cluster_tolerance=None):
         pass
 
     def SplitByAttributes_analysis(self, input_table, target_workspace, split_fields):
