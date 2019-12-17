@@ -66,7 +66,7 @@ class SetPaths:
     def addToPath(self):
         if self.isWindows():
             # TODO need to implement proper path additions - Needs more heavy lifting done to run outside of osgeo4w env
-            sys.path.insert(0, self.get_qgisprefix() + '/python/plugins')
+            # sys.path.insert(0, self.get_qgisprefix() + '/python/plugins')
             paths = ['C:/OSGEO4W64/apps/qgis/./python',
                      'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python',
                      'C:/Users/USERNAME/AppData/Roaming/QGIS/QGIS3\\profiles\\default/python/plugins',
@@ -96,6 +96,13 @@ class SetPaths:
                 path = path.replace("USERNAME", getpass.getuser())
                 if os.path.exists(path):
                     sys.path.append(path)
+            os.environ['GEOTIFF_CSV'] = 'C:\\OSGeo4W64\\share\\epsg_csv'
+            os.environ['GDAL_DATA'] = 'C:\\OSGeo4W64\\share\\gdal'
+            os.environ['GDAL_DRIVER_PATH'] = 'C:\\OSGeo4W64\\bin\\gdalplugins'
+            os.environ['PROJ_LIB'] = 'C:\\OSGeo4W64\\share\\proj'
+            os.environ['GDAL_DATA'] = 'C:\\OSGeo4W64\\share\\gdal'
+            os.environ['JPEGMEM'] = '1000000'
+            os.environ['path'] = 'C:\\OSGeo4W64\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\WBem'
 
         else:
             sys.path.append('/usr/share/qgis/python/plugins')
