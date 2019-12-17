@@ -6,7 +6,14 @@ class Extract():
         self.processing = processing
 
     def Clip_analysis(self, in_features, clip_features, out_features, cluster_tolerance=None):
-        pass
+        in_layer = QgsVectorLayer(in_features)
+        clip_layer = QgsVectorLayer(clip_features)
+        params = {}
+        params["INPUT"] = in_layer
+        params["MASK"] = clip_layer
+        params["OUTPUT"] = out_features
+        self.processing.run("gdal:clipvectorbypolygon", params)
+
 
     def Select_analysis(self, in_features, out_feature_class, where_clause=None):
         expr = QgsExpression(where_clause)

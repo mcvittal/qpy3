@@ -24,5 +24,11 @@ try:
 except Exception:
     traceback.print_exc(file=sys.stdout)
 
+try:
+    print("testing clip")
+    Qpy.Clip_analysis("test_data/multiple_polygons.shp", "test_data/multiple_polygons2.shp", "test_output/clipped.shp")
+except Exception:
+    traceback.print_exc(file=sys.stdout)
+
 print("Testing completed. Closing QGIS object")
 Qpy.close()
