@@ -1,9 +1,8 @@
 from qgis.core import *
 
 class Overlay():
-
-    def Overlay():
-        def __init__(self, Processing, processing):
+ 
+    def __init__(self, Processing, processing):
             self.processing =processing
             self.Processing = Processing
 
