@@ -10,6 +10,7 @@ setPaths = SetPaths()
 from modules.Vector.Analysis import Analysis
 from modules.Utils.License import LicenseManager
 from modules.Raster.RasterProcessing import RasterProcessingToolset
+from modules.Vector.Overlay import Overlay
 
 from qgis.core import QgsApplication
 
@@ -35,7 +36,7 @@ from processing.core.Processing import Processing
 import processing
 Processing.initialize()
 
-class Qpy(Analysis, LicenseManager, RasterProcessingToolset):
+class Qpy(Analysis, LicenseManager, Overlay, RasterProcessingToolset):
     def close(self):
         # Exit applications
         QgsApplication.exitQgis()

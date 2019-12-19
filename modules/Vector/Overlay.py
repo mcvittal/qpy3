@@ -1,13 +1,22 @@
 from qgis.core import *
 
+
 class Overlay():
- 
+
     def __init__(self, Processing, processing):
-            self.processing =processing
+            self.processing = processing
             self.Processing = Processing
 
-    def Union(self, in_features, out_feature_class, join_attributes=None, cluster_tolerance=None, gaps=None):
-        pass
+
+    def Union_analysis(self, in_features_A, in_features_B, out_feature_class, join_attributes=None, cluster_tolerance=None, gaps=None):
+        parameter = {}
+        parameter["A"] = QgsVectorLayer(in_features_A)
+        parameter["B"] = QgsVectorLayer(in_features_B)
+        parameter["SPLIT"] = True
+        parameter["RESULT"] = out_feature_class
+        self.processing.run("saga:polygonunion", parameter)
+
+
 
     def Erase(self, in_features, erase_features, out_feature_class, cluster_tolerance=None):
         pass
