@@ -8,10 +8,10 @@ class Overlay():
             self.Processing = Processing
 
 
-    def Union_analysis(self, in_features_A, in_features_B, out_feature_class, join_attributes=None, cluster_tolerance=None, gaps=None):
+    def Union_analysis(self, in_features, out_feature_class, join_attributes=None, cluster_tolerance=None, gaps=None):
         parameter = {}
-        parameter["A"] = QgsVectorLayer(in_features_A)
-        parameter["B"] = QgsVectorLayer(in_features_B)
+        parameter["A"] = QgsVectorLayer(in_features[0])
+        parameter["B"] = QgsVectorLayer(in_features[1])
         parameter["SPLIT"] = True
         parameter["RESULT"] = out_feature_class
         self.processing.run("saga:polygonunion", parameter)
