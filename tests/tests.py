@@ -32,7 +32,7 @@ except Exception:
 
 try:
     print("testing union")
-    Qpy.Union_analysis("test_data/multiple_polygons.shp", "test_data/multiple_polygons2.shp", "test_output/union.shp")
+    Qpy.Union_analysis(["test_data/multiple_polygons.shp", "test_data/multiple_polygons2.shp"], "test_output/union.shp")
 except Exception:
     traceback.print_exc(file=sys.stdout)
 
