@@ -12,8 +12,7 @@ from modules.License import LicenseManager
 
 
 import sys
-from qgis.core import QgsApplication, QgsVectorLayer
-
+from qgis.core import QgsVectorLayer, QgsApplication
 
 gui_flag = False
 
@@ -24,7 +23,9 @@ if not setPaths.isWindows():
     vdisplay.start()
 
 #Create dummy instance 
-app = QgsApplication([], gui_flag)
+print("it imported")
+app = QgsApplication([], gui_flag) # THIS IS WHERE IT IS BROKEN
+print('didn\'t died on the application')
 
 # Instantiate the dummy instance
 QgsApplication.setPrefixPath(setPaths.get_qgisprefix(), True)

@@ -96,6 +96,8 @@ class SetPaths:
                 path = path.replace("USERNAME", getpass.getuser())
                 if os.path.exists(path):
                     sys.path.append(path)
+                    
+            # """""liberated""""" from my Windows install -NB
             os.environ['GEOTIFF_CSV'] = 'C:\\OSGeo4W64\\share\\epsg_csv'
             os.environ['GDAL_DATA'] = 'C:\\OSGeo4W64\\share\\gdal'
             os.environ['GDAL_DRIVER_PATH'] = 'C:\\OSGeo4W64\\bin\\gdalplugins'
@@ -103,6 +105,9 @@ class SetPaths:
             os.environ['GDAL_DATA'] = 'C:\\OSGeo4W64\\share\\gdal'
             os.environ['JPEGMEM'] = '1000000'
             os.environ['path'] = 'C:\\OSGeo4W64\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\WBem'
+            #modify environment variables to find qgis and qt plugins during qgis.core import
+            os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = r'C:\OSGeo4W64\apps\Qt5\plugins'
+            os.environ['PATH'] += r';C:\OSGeo4W64\apps\qgis\bin;C:\OSGeo4W64\apps\Qt5\bin;C:\OSGeo4W64\share\proj'
 
         else:
             sys.path.append('/usr/share/qgis/python/plugins')
