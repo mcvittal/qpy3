@@ -98,16 +98,17 @@ class SetPaths:
                     sys.path.append(path)
                     
             # """""liberated""""" from my Windows install -NB
-            os.environ['GEOTIFF_CSV'] = 'C:\\OSGeo4W64\\share\\epsg_csv'
-            os.environ['GDAL_DATA'] = 'C:\\OSGeo4W64\\share\\gdal'
-            os.environ['GDAL_DRIVER_PATH'] = 'C:\\OSGeo4W64\\bin\\gdalplugins'
-            os.environ['PROJ_LIB'] = 'C:\\OSGeo4W64\\share\\proj'
-            os.environ['GDAL_DATA'] = 'C:\\OSGeo4W64\\share\\gdal'
+            qgisdir = 'C:\\OSGeo4W64'
+            
+            os.environ['GEOTIFF_CSV'] = '%s\\share\\epsg_csv' % qgisdir
+            os.environ['GDAL_DATA'] = '$s\\share\\gdal' % qgisdir
+            os.environ['GDAL_DRIVER_PATH'] = '%s\\bin\\gdalplugins' % qgisdir
+            os.environ['PROJ_LIB'] = '%s\\share\\proj' % qgisdir
+            os.environ['GDAL_DATA'] = '$s\\share\\gdal' % qgisdir
             os.environ['JPEGMEM'] = '1000000'
-            os.environ['path'] = 'C:\\OSGeo4W64\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\WBem'
+            os.environ['path'] = '%s\\bin;%s\\apps\\qgis\\bin;%s\\apps\\Qt5\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\WBem' % (qgisdir,qgisdir,qgisdir)
             #modify environment variables to find qgis and qt plugins during qgis.core import
-            os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = r'C:\OSGeo4W64\apps\Qt5\plugins'
-            os.environ['PATH'] += r';C:\OSGeo4W64\apps\qgis\bin;C:\OSGeo4W64\apps\Qt5\bin;C:\OSGeo4W64\share\proj'
+            os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '%s\\apps\\Qt5\\plugins' % qgisdir
 
         else:
             sys.path.append('/usr/share/qgis/python/plugins')
