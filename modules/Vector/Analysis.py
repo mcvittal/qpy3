@@ -37,7 +37,10 @@ class Analysis(Extract):
                       method="PLANAR"):
         pass
 
-    def PolgonNeighbors_analysis(self, in_features, out_table, in_fields=None,area_overlap="NO_AREA_OVERLAP",
+    def PointDistance_analysis (self, in_features, near_features, out_table, search_radius="ALL"):
+        pass
+    
+    def PolygonNeighbors_analysis(self, in_features, out_table, in_fields=None,area_overlap="NO_AREA_OVERLAP",
                                  both_sides="BOTH_SIDES", cluster_tolerance=None, out_linear_units=None,
                                  out_area_units=None):
         pass
