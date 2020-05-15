@@ -47,7 +47,6 @@ class RasterProcessingToolset():
             dtype = gdal_array.NumericTypeCodeToGDALTypeCode(np_dt)
 
         # Check if working with multiband raster
-        print(len(nparr.shape))
         if len(nparr.shape) == 3:
             n_bands = nparr.shape[0]
             for x in range(0, n_bands):
