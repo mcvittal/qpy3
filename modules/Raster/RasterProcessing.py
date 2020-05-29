@@ -22,11 +22,11 @@ class RasterProcessingToolset():
     def computeImageEdge(self, in_raster, out_vector_path, simplified=True):
         in_ds = gdal.Open(in_raster)
         band = in_ds.GetRasterBand(1)
-        nd_value = band.GetNoDataValue()
+        nd_value = 0
         array = in_ds.ReadAsArray()
         array[array == nd_value] = 0
         array[array != nd_value] = 1
-        self.numpyArrayToRaster(array[0], in_ds.GetProjection(), in_ds.GetGeoTransform(), 0, "/tmp/binary.tif")
+        self.numpyArrayToRaster(array, in_ds.GetProjection(), in_ds.GetGeoTransform(), 0, "/tmp/binary.tif")
         simplified = QgsRasterLayer("/tmp/binary.tif")
 
         params = {}
@@ -34,6 +34,23 @@ class RasterProcessingToolset():
         params["BAND"] = 1
         params["OUTPUT"] = out_vector_path
         self.processing.run("gdal:polygonize", params)
+
+    def rasterToArray(self, in_raster):
+        gdal.UseExceptions()
+        gdal.PushErrorHandler('CPLQuietErrorHandler')
+        ds = gdal.Open(in_raster).ReadAsArray()
+        return ds
+
+
+
+    def rasterToCOG(self, in_raster, out_cog_path):
+        # This requires GDAL 3 or higher. To install, run the following:
+        # sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+        if not (gdal.VersionInfo().startsWith("30")):
+            print("Exporting to COG format is not supported in older GDAL versions. Please upgrade your install")
+            return
+
+
 
 
 
@@ -62,6 +79,7 @@ class RasterProcessingToolset():
                 outDs = None
         else:
             driver = gdal.GetDriverByName('GTIFF')
+            print(nparr.shape)
             outDs = driver.Create(out_raster_path, nparr.shape[1], nparr.shape[0], 1, dtype,
                                   ['COMPRESS=LZW', 'TILED=YES', 'BLOCKXSIZE=128', 'BLOCKYSIZE=128'])
             outDs.GetRasterBand(1).WriteArray(nparr)
