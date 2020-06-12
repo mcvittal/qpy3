@@ -41,6 +41,18 @@ class RasterProcessingToolset():
         ds = gdal.Open(in_raster).ReadAsArray()
         return ds
 
+    def shiftRaster(self, in_raster, north=0, east=0, south=0,west=0):
+        rast_src = gdal.Open(in_raster, 1)
+        gt = rast_src.GetGeoTransform()
+        gtl = list(gt)
+        gtl[0] += east;
+        gtl[0] -= west;
+        gtl[3] += north;
+        gtl[3] -= south;
+        rast_src.SetGeoTransform(tuple(gtl))
+        rast_src.SetNoDataValue(0)
+        rast_src = None
+
 
 
     def rasterToCOG(self, in_raster, out_cog_path):
