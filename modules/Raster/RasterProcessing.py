@@ -50,7 +50,6 @@ class RasterProcessingToolset():
         gtl[3] += north;
         gtl[3] -= south;
         rast_src.SetGeoTransform(tuple(gtl))
-        rast_src.SetNoDataValue(0)
         rast_src = None
 
 
