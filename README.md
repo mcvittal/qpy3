@@ -3,7 +3,7 @@
 
 ## Installation 
 
-You can run the Docker compose file under the Dockerfiles/ folder in this repo to set up a minimal Ubuntu docker image that can run Qpy scripts. 
+You can run the Docker compose file in the root of this repo to set up a minimal Ubuntu docker image that can run Qpy scripts. 
 
 
 ## Using Qpy 
