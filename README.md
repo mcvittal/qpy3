@@ -29,7 +29,7 @@ and it will print to stdout all algorithms available. This method can also take 
     qpy.alglist("buffer")
 	
 
-To get the specific information about one algorithm (Eg. GDAL:cliprasterbyextent), you can run 
+To get the specific information about one algorithm (Eg. GDAL:buffervectors), you can run 
 
 
     qpy.alghelp("GDAL:buffervectors") 
