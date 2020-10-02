@@ -1,11 +1,14 @@
-from qgis.core import *
+from qgis.core import QgsVectorLayer
 
-class Analysis():
+from modules.Vector.Extract import Extract
+
+# Inherit the Extract subclass of Analysis
+class Analysis(Extract):
     def __init__(self, processing, Processing):
         self.Processing = Processing
         self.processing = processing
 
-    def Buffer(self, in_features, out_feature_class, buffer_distance_or_field):
+    def buffervector(self, in_features, out_features, buffer_distance_or_field):
         vlayer = QgsVectorLayer(in_features, "Input buffer feature", "ogr")
         params = {}
         params["INPUT"] = vlayer
@@ -13,6 +16,8 @@ class Analysis():
         params["DISSOLVE"] = True
         params["OUTPUT"] = out_feature_class
         self.processing.run("gdal:buffervectors", params)
+
+
 
 
 

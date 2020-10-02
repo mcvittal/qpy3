@@ -1,5 +1,3 @@
-from qgis.core import *
-
 class LicenseManager():
     def __init__(self, processing, Processing):
         self.Processing = Processing

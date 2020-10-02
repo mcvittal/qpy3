@@ -3,17 +3,16 @@
 ## Main class that handles imports of all sub-classes. 
 
 ## Written 12/12/2019 by @mcvittal
-from modules.SetPaths import SetPaths
+from modules.Utils.SetPaths import SetPaths
 setPaths = SetPaths()
 
 
-from modules.Analysis import Analysis
-from modules.License import LicenseManager
+from modules.Vector.Analysis import Analysis
+from modules.Utils.License import LicenseManager
+from modules.Raster.RasterProcessing import RasterProcessingToolset
+from modules.Vector.Overlay import Overlay
 
-
-import sys
-from qgis.core import QgsApplication, QgsVectorLayer
-
+from qgis.core import QgsApplication
 
 gui_flag = False
 
@@ -37,19 +36,21 @@ from processing.core.Processing import Processing
 import processing
 Processing.initialize()
 
-class Qpy(Analysis, LicenseManager):
+class Qpy(Analysis, LicenseManager, Overlay, RasterProcessingToolset):
     def close(self):
         # Exit applications
         QgsApplication.exitQgis()
         QgsApplication.exit()
 
+    # Helpful general functions go here
+    def alglist(self, search_str=""):
+        search_str = search_str.lower()
+        for alg in QgsApplication.processingRegistry().algorithms():
+            if search_str in alg.name().lower() or search_str in alg.displayName().lower():
+                print("{}:{} --> {}".format(alg.provider().name(), alg.name(), alg.displayName()))
+
+    def alghelp(self, name):
+        processing.algorithmHelp(name.lower())
+
+
 Qpy = Qpy(processing, Processing)
-
-
-# Helpful general functions go here 
-def list_all_algorithms(self):
-    for alg in QgsApplication.processingRegistry().algorithms():
-        print("{}:{} --> {}".format(alg.provider().name(), alg.name(), alg.displayName()))
-
-
-
