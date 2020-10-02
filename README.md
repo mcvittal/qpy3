@@ -154,7 +154,7 @@ I did have some time to create some built-in functions that wrap some QGIS funct
 
 A wrapper for gdal:buffervectors. Buffers a vector dataset by a specified distance.
 
-    Qpy.buffer_vectors(in_features="/path/to/input/vector.shp", out_features="/path/to/output/features.shp", buffer_distance_or_field=30)
+    Qpy.buffer_vector(in_features="/path/to/input/vector.shp", out_features="/path/to/output/features.shp", buffer_distance_or_field=30)
 
 #### Vector clipping
 
