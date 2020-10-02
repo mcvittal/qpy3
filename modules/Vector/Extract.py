@@ -5,7 +5,7 @@ class Extract():
         self.Processing = Processing
         self.processing = processing
 
-    def Clip_analysis(self, in_features, clip_features, out_features, cluster_tolerance=None):
+    def clip_vector(self, in_features, clip_features, out_features):
         in_layer = QgsVectorLayer(in_features)
         clip_layer = QgsVectorLayer(clip_features)
         params = {}
@@ -15,7 +15,7 @@ class Extract():
         self.processing.run("gdal:clipvectorbypolygon", params)
 
 
-    def Select_analysis(self, in_features, out_feature_class, where_clause=None):
+    def select_vector(self, in_features, out_features, where_clause=None):
         expr = QgsExpression(where_clause)
         in_layer = QgsVectorLayer(in_features)
 
@@ -24,12 +24,3 @@ class Extract():
 
         QgsVectorFileWriter.writeAsVectorFormat(in_layer, out_feature_class,  "utf-8", in_layer.crs(), "ESRI Shapefile", onlySelected=True)
 
-
-    def Split_analysis(self, in_features, split_features, split_field, out_workspace, cluster_tolerance=None):
-        pass
-
-    def SplitByAttributes_analysis(self, input_table, target_workspace, split_fields):
-        pass
-
-    def TableSelect_analysis(self, in_table, out_table, where_clause=None):
-        pass
