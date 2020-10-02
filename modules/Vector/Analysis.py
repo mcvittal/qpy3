@@ -8,7 +8,7 @@ class Analysis(Extract):
         self.Processing = Processing
         self.processing = processing
 
-    def buffervector(self, in_features, out_features, buffer_distance_or_field):
+    def buffer_vector(self, in_features, out_features, buffer_distance_or_field):
         vlayer = QgsVectorLayer(in_features, "Input buffer feature", "ogr")
         params = {}
         params["INPUT"] = vlayer
