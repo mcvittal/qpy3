@@ -13,5 +13,5 @@ class Overlay():
         parameter["A"] = QgsVectorLayer(in_features[0])
         parameter["B"] = QgsVectorLayer(in_features[1])
         parameter["SPLIT"] = True
-        parameter["RESULT"] = out_feature_class
+        parameter["RESULT"] = out_features
         self.processing.run("saga:polygonunion", parameter)

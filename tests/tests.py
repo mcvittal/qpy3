@@ -12,7 +12,7 @@ if not os.path.exists("test_output"):
 
 try:
     print("Testing buffering")
-    Qpy.buffer_vectors("test_data/point1.shp", "test_output/buffered.shp", 0.5)
+    Qpy.buffer_vector("test_data/point1.shp", "test_output/buffered.shp", 0.5)
     print("Buffering succeeded")
 except Exception:
     traceback.print_exc(file=sys.stdout)

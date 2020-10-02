@@ -14,7 +14,7 @@ class Analysis(Extract):
         params["INPUT"] = vlayer
         params["DISTANCE"] = buffer_distance_or_field
         params["DISSOLVE"] = True
-        params["OUTPUT"] = out_feature_class
+        params["OUTPUT"] = out_features
         self.processing.run("gdal:buffervectors", params)
 
 

@@ -22,5 +22,5 @@ class Extract():
         selection = in_layer.getFeatures(QgsFeatureRequest().setFilterExpression(where_clause))
         in_layer.selectByIds([s.id() for s in selection])
 
-        QgsVectorFileWriter.writeAsVectorFormat(in_layer, out_feature_class,  "utf-8", in_layer.crs(), "ESRI Shapefile", onlySelected=True)
+        QgsVectorFileWriter.writeAsVectorFormat(in_layer, out_features,  "utf-8", in_layer.crs(), "ESRI Shapefile", onlySelected=True)
 
