@@ -9,7 +9,7 @@ class Extract():
         in_layer = QgsVectorLayer(in_features)
         clip_layer = QgsVectorLayer(clip_features)
         params = {}
-        params["INPUT"] = in_layer
+        params["INPUT"] = in_features
         params["MASK"] = clip_layer
         params["OUTPUT"] = out_features
         self.processing.run("gdal:clipvectorbypolygon", params)

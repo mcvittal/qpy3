@@ -11,7 +11,7 @@ class RasterProcessingToolset():
 
     def clip_raster(self, in_raster, in_vector, out_path):
         raster_layer = QgsRasterLayer(in_raster)
-        vector_layer = QgsVectorLayer(vector_path)
+        vector_layer = QgsVectorLayer(in_vector)
         params = {}
         params["INPUT"] = raster_layer
         params["MASK"] = vector_layer
@@ -64,8 +64,7 @@ class RasterProcessingToolset():
 
 
 
-
-
+'''
     def numpyArrayToRaster(self, nparr, proj, geot, nodata_value, out_raster_path, dtype=None):
         gdal.AllRegister()
         np_dt = nparr.dtype
@@ -97,3 +96,4 @@ class RasterProcessingToolset():
             outDs.SetProjection(proj)
             outDs.SetGeoTransform(geot)
             outDs = None
+'''
