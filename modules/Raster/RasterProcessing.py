@@ -23,12 +23,15 @@ class RasterProcessingToolset():
     def compute_edge_raster(self, in_raster, out_vector_path, nodata_value=0):
         in_ds = gdal.Open(in_raster)
         band = in_ds.GetRasterBand(1)
+        print(nodata_value)
         nd_value = nodata_value
         array = in_ds.ReadAsArray()
-        array[array == nd_value] = 0
         array[array != nd_value] = 1
+        array[array == nd_value] = 0
+        
         uuid_str = str(uuid.uuid1())
         filename = "/tmp/" + uuid_str + ".tif"
+        print(filename)
         self.numpyArrayToRaster(array, in_ds.GetProjection(), in_ds.GetGeoTransform(), 0, filename)
         simplified = QgsRasterLayer(filename)
 
@@ -64,7 +67,7 @@ class RasterProcessingToolset():
 
 
 
-'''
+
     def numpyArrayToRaster(self, nparr, proj, geot, nodata_value, out_raster_path, dtype=None):
         gdal.AllRegister()
         np_dt = nparr.dtype
@@ -96,4 +99,4 @@ class RasterProcessingToolset():
             outDs.SetProjection(proj)
             outDs.SetGeoTransform(geot)
             outDs = None
-'''
+
